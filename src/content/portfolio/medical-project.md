@@ -6,12 +6,7 @@ category: "Project"
 tech: ["Python", "Data Analysis", "Healthcare"]
 heroImage: "/blog-placeholder-3.jpg"
 published: true
-links: [
-  {
-    title: "GitHub",
-    url: "https://github.com/heeyoun-ko/website"
-  }
-]
+links: []
 ---
 
 ## Overview
