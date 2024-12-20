@@ -7,15 +7,12 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://heeyunko.pages.dev',
+	site: 'https://eindelpov.com',
 	base: '/',
 	integrations: [mdx(), sitemap(), tailwind()],
 	output: 'static',
 	trailingSlash: 'always',
 	build: {
 		format: 'directory'
-	},
-	experimental: {
-		contentCollections: true
 	}
 });
