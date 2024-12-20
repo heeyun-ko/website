@@ -24,20 +24,25 @@ const posts = (await getCollection('portfolio')).sort(
 				<div class="grid">
 					{
 						posts.map((post) => (
-							<div class="post-card">
+							<div class="project-card">
 								<a href={`/${post.slug}/`}>
 									{post.data.heroImage && (
 										<img 
 											src={post.data.heroImage} 
-											alt="" 
+											alt={post.data.title}
 											class="hero-image"
 										/>
 									)}
-									<h2 class="title">{post.data.title}</h2>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-									<p class="description">{post.data.description}</p>
+									<div class="content">
+										<span class="category">{post.data.category}</span>
+										<h2 class="title">{post.data.title}</h2>
+										<p class="description">{post.data.description}</p>
+										<div class="tech-stack">
+											{post.data.tech.map(tech => (
+												<span class="tech-tag">{tech}</span>
+											))}
+										</div>
+									</div>
 								</a>
 							</div>
 						))
@@ -56,37 +61,61 @@ const posts = (await getCollection('portfolio')).sort(
 		margin: 0 auto;
 		padding: 3rem 1rem;
 	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 2rem;
-		padding: 0;
 	}
-	.post-card {
-		border: 1px solid #ddd;
+	.project-card {
+		border: 1px solid #eee;
 		border-radius: 8px;
 		overflow: hidden;
-		transition: transform 0.2s;
+		transition: transform 0.2s, box-shadow 0.2s;
 	}
-	.post-card:hover {
+	.project-card:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 	}
 	.hero-image {
 		width: 100%;
 		height: 200px;
 		object-fit: cover;
 	}
-	.title {
-		margin: 0.5rem;
-		font-size: 1.5rem;
+	.content {
+		padding: 1.5rem;
 	}
-	.date {
-		margin: 0.5rem;
-		color: #595959;
+	.category {
+		background: #f0f0f0;
+		padding: 0.3rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.8rem;
+		color: #666;
+	}
+	.title {
+		margin: 1rem 0;
+		font-size: 1.5rem;
+		color: #333;
 	}
 	.description {
-		margin: 0.5rem;
-		color: #444;
+		color: #666;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.tech-tag {
+		background: #e9ecef;
+		padding: 0.2rem 0.6rem;
+		border-radius: 12px;
+		font-size: 0.8rem;
+		color: #495057;
 	}
 	a {
 		text-decoration: none;

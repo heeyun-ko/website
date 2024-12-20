@@ -6,9 +6,13 @@ const portfolio = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
+		category: z.enum(['Project', 'Research', 'Publication']).default('Project'),
+		tech: z.array(z.string()).default([]),
 		heroImage: z.string().optional(),
-		tags: z.array(z.string()).default(['all']),
+		links: z.array(z.object({
+			title: z.string(),
+			url: z.string()
+		})).optional(),
 	}),
 });
 
