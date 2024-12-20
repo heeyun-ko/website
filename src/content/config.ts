@@ -1,6 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const portfolio = defineCollection({
+	type: 'content',
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -12,7 +13,7 @@ const portfolio = defineCollection({
 		links: z.array(z.object({
 			title: z.string(),
 			url: z.string()
-		}))
+		})).optional().default([])
 	})
 });
 

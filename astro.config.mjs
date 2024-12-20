@@ -14,5 +14,8 @@ export default defineConfig({
 	trailingSlash: 'always',
 	build: {
 		format: 'directory'
+	},
+	experimental: {
+		contentCollections: true
 	}
 });
