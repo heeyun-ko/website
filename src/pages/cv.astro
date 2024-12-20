@@ -18,44 +18,104 @@ const projects = await getCollection('portfolio', ({ data }) => {
 	<body>
 		<Header />
 		<main>
-			<h1>CV</h1>
-			
+			<h1>고희윤 (Hee yun Ko)</h1>
+			<p><strong>주소:</strong> 서울특별시, 대한민국</p>
+			<p><strong>연락처:</strong> (+82) 10-4781-5065</p>
+			<p><strong>이메일:</strong> <a href="mailto:eindel1217@gmail.com">eindel1217@gmail.com</a></p>
+
 			<!-- Education Section -->
 			<section>
-				<h2>Education</h2>
+				<h2>학력</h2>
 				<div>
-					<h3>Hanyang University</h3>
-					<p>Bachelor of Science in Computer Science</p>
-					<p>2019 - 2024</p>
+					<h3>중앙대학교 의과대학</h3>
+					<p><strong>학위:</strong> 의학 학사 (2020년 3월 - 2028년 3월, 예정)</p>
+					<p><strong>장학금:</strong> 2021년 진정주 약학 박사 장학금 수혜</p>
+					<p>- 학업 성취도 및 잠재력을 인정받아 선정</p>
 				</div>
 			</section>
 
-			<!-- Skills Section -->
+			<!-- Experience Section -->
 			<section>
-				<h2>Skills</h2>
+				<h2>경력</h2>
 				<div>
-					<h3>Programming Languages</h3>
-					<p>Python, JavaScript, Java, C++</p>
-					
-					<h3>Technologies</h3>
-					<p>React, Node.js, Git, Docker</p>
+					<h3>서울대학교 이종욱 글로벌 보건센터</h3>
+					<p><strong>연구 인턴십</strong> (2023년 7월 - 2023년 8월)</p>
+					<ul>
+						<li>글로벌 보건 및 의료 정책 관련 최신 논문 분석 및 보고서 작성</li>
+						<li>의료윤리학 세미나 참가 및 글로벌 보건 환경에서 윤리적 문제와 해결 방안 논의</li>
+						<li>보건학과 국제협력 분야의 학문적 기반과 실질적 문제 해결 능력 강화</li>
+					</ul>
+				</div>
+				<div>
+					<h3>중앙대학교 생명공학부 신경유전체학 교실</h3>
+					<p><strong>학부 연구생</strong> (2024년 7월)</p>
+					<ul>
+						<li>Neurogenomics 기반 연구에서 핵산 추출, PCR 등 Wet Lab 실험 기술 습득</li>
+						<li>신경과학과 유전체학 교차 연구의 기초를 이해하며 해당 분야에 대한 심화 학습</li>
+					</ul>
+				</div>
+				<div>
+					<h3>디지털 헬스케어 스타트업 (주)딜랏</h3>
+					<p><strong>Product Owner (PO)</strong> (2024년 8월)</p>
+					<ul>
+						<li>아토피 피부염 환자를 위한 '가려움 추적기' 모바일 애플리케이션 기획 및 UX 설계</li>
+						<li>사용자 인터뷰와 데이터 분석을 통해 실질적인 사용자 경험 향상</li>
+					</ul>
+				</div>
+				<div>
+					<h3>슬립테크 헬스케어 스타트업 Aphrodot</h3>
+					<p><strong>CEO 및 창립자</strong> (2024년 9월 - 현재)</p>
+					<ul>
+						<li>1:1 맞춤형 수면 컨설팅 서비스 ‘갓잠’ 운영</li>
+						<li>정성적 면담을 기반으로 개인별 맞춤형 수면 솔루션 제공</li>
+						<li>수면 케어 향 개발 회사 (주)USIMKO와 협력해 소셜링 이벤트 공동 주최</li>
+					</ul>
 				</div>
 			</section>
 
-			<!-- Projects Section -->
+			<!-- Leadership and Awards Section -->
 			<section>
-				<h2>Projects</h2>
-				{projects.map((project) => (
-					<div class="project-card">
-						<h3>{project.data.title}</h3>
-						<p>{project.data.description}</p>
-						<div class="tech-stack">
-							{project.data.tech.map((tech) => (
-								<span class="tech-tag">{tech}</span>
-							))}
-						</div>
-					</div>
-				))}
+				<h2>리더십 및 수상 경력</h2>
+				<h3>리더십</h3>
+				<div>
+					<h3>All-Rounder Club (중앙대학교 의과대학 동아리)</h3>
+					<p><strong>1대 회장</strong> (2023년 9월 - 2024년 6월)</p>
+					<ul>
+						<li>중앙대학교 Linc 3.0 창업 지원단으로부터 벤처 동아리로 공식 선정</li>
+						<li>의료 및 인공지능(AI) 융합 분야의 지식을 공유하기 위해 전문가 초청 심포지엄 기획 및 진행</li>
+					</ul>
+				</div>
+				<div>
+					<h3>NeuroXi (한국 의학/공학 대학생 신경과학 커뮤니티)</h3>
+					<p><strong>창립 및 운영</strong> (2024년 6월 - 현재)</p>
+					<ul>
+						<li>Computational Neuroscience, BCI 및 디지털 헬스케어 관련 정보 공유 플랫폼 구축</li>
+						<li>신경과학 및 의료 기술 분야에서의 학제 간 협력을 촉진</li>
+					</ul>
+				</div>
+				<h3>수상 경력</h3>
+				<div>
+					<h3>2023 디지털 헬스케어 메디컬 해커톤</h3>
+					<p><strong>인공지능센터장상 (장려상)</strong> (2023년 9월)</p>
+					<ul>
+						<li>LLM을 활용해 희귀질환 진단 방랑 문제 해결 서비스 제시</li>
+						<li>알고리즘 성능 개선 및 비즈니스 모델 정교화</li>
+					</ul>
+				</div>
+				<div>
+					<h3>TEU MED 4차 혁신 공모전</h3>
+					<p><strong>최우수상 (2등)</strong> (2024년 4월 - 6월)</p>
+					<ul>
+						<li>가족 간병인을 위한 혁신 의료 제품 ‘Auto Suction 24/7’ 기획</li>
+						<li>간병인의 물리적·정신적 부담을 줄일 수 있는 실용적이고 경제적인 솔루션을 제안</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Vision Section -->
+			<section>
+				<h2>비전</h2>
+				<p>의학의 전문성을 바탕으로 공학, 철학 등 다양한 학문의 관점을 융합하여, 세상의 중요한 문제를 다학제적으로 접근하고 해결하는 데 기여하고자 합니다.</p>
 			</section>
 		</main>
 		<Footer />
