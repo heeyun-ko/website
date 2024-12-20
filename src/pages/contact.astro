@@ -19,15 +19,14 @@ const description = "View our important documents and resources in PDF format.";
 			<div class="pdf-container">
 				<div class="pdf-content">
 					<h1>Documents</h1>
-					<iframe src="/mnt/data/HeeyunKo_Resume.pdf" class="pdf-viewer" frameborder="0" scrolling="no" width="100%" height="800px"></iframe>
+					<iframe src="/documents/HeeyunKo_Resume.pdf" class="pdf-viewer" frameborder="0" scrolling="no" width="100%" height="800px" title="Resume Document"></iframe>
 				</div>
 			</div>
 		</main>
 		<Footer />
 		<nav>
 			<ul>
-				<li><a href="/mnt/data/HeeyunKo_Resume.pdf" target="_blank">Download PDF</a></li>
-				<li><a href="/mnt/data/HeeyunKo_Resume.pdf" target="_blank">View Documents</a></li>
+				<li><a href="/documents/HeeyunKo_Resume.pdf" target="_blank">Download PDF</a></li>
 			</ul>
 		</nav>
 	</body>
@@ -57,6 +56,9 @@ const description = "View our important documents and resources in PDF format.";
 		border: 1px solid #ddd;
 		border-radius: 8px;
 		margin-top: 1rem;
+		width: 100%;
+		height: 80vh;
+		overflow: hidden;
 	}
 
 	nav ul {
@@ -67,8 +69,8 @@ const description = "View our important documents and resources in PDF format.";
 	}
 
 	nav ul li {
-		display: inline;
-		margin-right: 1rem;
+		display: inline-block;
+		margin: 0 1.5rem;
 	}
 
 	nav ul li a {
@@ -87,7 +89,7 @@ const description = "View our important documents and resources in PDF format.";
 		}
 
 		.pdf-viewer {
-			height: 600px;
+			height: 60vh;
 		}
 	}
 </style>
