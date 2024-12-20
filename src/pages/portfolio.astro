@@ -6,15 +6,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
-// 수정된 부분: published가 true인 항목만 가져오기
-const portfolioEntries = await getCollection('portfolio', ({ data }) => {
-	return data.published === true;
-});
+// 디버깅을 위한 로그 추가
+const portfolioEntries = await getCollection('portfolio');
+console.log('All entries:', portfolioEntries);
 
-// 날짜순 정렬 추가
-const sortedPortfolioEntries = portfolioEntries.sort((a, b) => 
+const filteredEntries = portfolioEntries.filter(entry => {
+	console.log('Entry:', entry.slug, 'Published:', entry.data.published);
+	return entry.data.published === true;
+});
+console.log('Filtered entries:', filteredEntries);
+
+const sortedPortfolioEntries = filteredEntries.sort((a, b) => 
 	new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
+console.log('Sorted entries:', sortedPortfolioEntries);
 ---
 
 <!doctype html>
@@ -29,10 +34,17 @@ const sortedPortfolioEntries = portfolioEntries.sort((a, b) =>
 				<h1>Portfolio</h1>
 				<div class="grid">
 					{
-						sortedPortfolioEntries.map((post) => (  // portfolioEntries를 sortedPortfolioEntries로 변경
+						sortedPortfolioEntries.map((post) => (
 							<div class="project-card">
-								<a href={`/portfolio/${post.slug}/`}>  <!-- URL 경로 수정 -->
-									{/* 나머지 코드 */}
+								<a href={`/portfolio/${post.slug}/`}>
+									{post.data.heroImage && (
+										<img src={post.data.heroImage} alt={post.data.title} />
+									)}
+									<h2>{post.data.title}</h2>
+									<p>{post.data.description}</p>
+									<p>
+										<FormattedDate date={new Date(post.data.pubDate)} />
+									</p>
 								</a>
 							</div>
 						))

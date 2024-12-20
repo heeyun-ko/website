@@ -11,4 +11,8 @@ export default defineConfig({
 	base: '/',
 	integrations: [mdx(), sitemap(), tailwind()],
 	output: 'static',
+	trailingSlash: 'always',
+	build: {
+		format: 'directory'
+	}
 });

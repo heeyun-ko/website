@@ -67,7 +67,7 @@
               "type": "null"
             }
           ],
-          "default": "2024-12-20T02:52:31.859Z"
+          "default": "2024-12-20T03:08:07.554Z"
         },
         "updated_date": {
           "$ref": "#/definitions/blog/properties/created_date"
