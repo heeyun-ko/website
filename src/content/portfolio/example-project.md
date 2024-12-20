@@ -1,10 +1,11 @@
 ---
 title: "Example Project"
 description: "This is an example project description"
-pubDate: "Dec 20 2023"
+pubDate: "2023-12-20"
 category: "Project"
 tech: ["Python", "JavaScript", "React"]
 heroImage: "/project-image.jpg"
+published: true
 links: [
   {
     title: "GitHub",
