@@ -1,17 +1,26 @@
 ---
 title: "Medical Project"
-description: "A project exploring the intersection of healthcare and technology"
+description: "This is a medical project description"
 pubDate: "2023-12-20"
 category: "Project"
-tech: ["Python", "Data Analysis", "Healthcare"]
-heroImage: "/blog-placeholder-3.jpg"
+tech: ["Python", "TensorFlow", "OpenCV"]
+heroImage: "/medical-project-image.jpg"
 published: true
-links: []
+links: [
+  {
+    title: "GitHub",
+    url: "https://github.com/username/medical-project"
+  },
+  {
+    title: "Demo",
+    url: "https://demo.medical-project.com"
+  }
+]
 ---
 
 ## Overview
 
-This project focuses on the application of technology in healthcare settings.
+Detailed description of the medical project goes here.
 
 ## Features
 
