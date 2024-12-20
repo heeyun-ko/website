@@ -1,6 +1,18 @@
 import { defineCollection, z } from 'astro:content';
 
+// 블로그 컬렉션 정의
+const blog = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		pubDate: z.string(),
+		// ... 기타 필드들
+	})
+});
+
+// 포트폴리오 컬렉션 정의
 const portfolio = defineCollection({
+	type: 'content',  // 명시적으로 type 지정
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -13,10 +25,11 @@ const portfolio = defineCollection({
 			title: z.string(),
 			url: z.string()
 		}))
-	}),
+	})
 });
 
+// 컬렉션 내보내기
 export const collections = {
-	'portfolio': portfolio,
-	// ... 다른 컬렉션들
+	'blog': blog,
+	'portfolio': portfolio
 }; 
