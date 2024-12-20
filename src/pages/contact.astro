@@ -24,6 +24,12 @@ const description = "View our important documents and resources in PDF format.";
 			</div>
 		</main>
 		<Footer />
+		<nav>
+			<ul>
+				<li><a href="/mnt/data/HeeyunKo_Resume.pdf" target="_blank">Download PDF</a></li>
+				<li><a href="/mnt/data/HeeyunKo_Resume.pdf" target="_blank">View Documents</a></li>
+			</ul>
+		</nav>
 	</body>
 </html>
 
@@ -51,6 +57,24 @@ const description = "View our important documents and resources in PDF format.";
 		border: 1px solid #ddd;
 		border-radius: 8px;
 		margin-top: 1rem;
+	}
+
+	nav ul {
+		list-style-type: none;
+		padding: 0;
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	nav ul li {
+		display: inline;
+		margin-right: 1rem;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: rgb(var(--blue));
+		font-weight: bold;
 	}
 
 	@media (max-width: 768px) {
