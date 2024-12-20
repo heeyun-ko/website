@@ -1,7 +1,7 @@
 ---
 title: "Medical Project"
 description: "A project exploring the intersection of healthcare and technology"
-pubDate: "Dec 20 2023"
+pubDate: "2023-12-20"
 category: "Project"
 tech: ["Python", "Data Analysis", "Healthcare"]
 heroImage: "/blog-placeholder-3.jpg"

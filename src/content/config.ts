@@ -5,10 +5,10 @@ const portfolio = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		pubDate: z.string(),
+		pubDate: z.coerce.date(),
 		category: z.string(),
 		tech: z.array(z.string()),
-		heroImage: z.string(),
+		heroImage: z.string().optional(),
 		published: z.boolean(),
 		links: z.array(z.object({
 			title: z.string(),
@@ -17,4 +17,4 @@ const portfolio = defineCollection({
 	})
 });
 
-export const collections = { portfolio }; 
+export const collections = { portfolio };
