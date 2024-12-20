@@ -3,21 +3,81 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('portfolio', ({ data }) => {
+	return data.published === true;
+});
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`CV - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<article>
-				<h1>CV</h1>
-				<!-- CV 내용 -->
-			</article>
+			<h1>CV</h1>
+			
+			<!-- Education Section -->
+			<section>
+				<h2>Education</h2>
+				<div>
+					<h3>Hanyang University</h3>
+					<p>Bachelor of Science in Computer Science</p>
+					<p>2019 - 2024</p>
+				</div>
+			</section>
+
+			<!-- Skills Section -->
+			<section>
+				<h2>Skills</h2>
+				<div>
+					<h3>Programming Languages</h3>
+					<p>Python, JavaScript, Java, C++</p>
+					
+					<h3>Technologies</h3>
+					<p>React, Node.js, Git, Docker</p>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section>
+				<h2>Projects</h2>
+				{projects.map((project) => (
+					<div class="project-card">
+						<h3>{project.data.title}</h3>
+						<p>{project.data.description}</p>
+						<div class="tech-stack">
+							{project.data.tech.map((tech) => (
+								<span class="tech-tag">{tech}</span>
+							))}
+						</div>
+					</div>
+				))}
+			</section>
 		</main>
 		<Footer />
+		<style>
+			.project-card {
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				padding: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			.tech-stack {
+				margin-top: 0.5rem;
+			}
+
+			.tech-tag {
+				background-color: #f0f0f0;
+				padding: 0.2rem 0.5rem;
+				border-radius: 4px;
+				margin-right: 0.5rem;
+				font-size: 0.9rem;
+			}
+		</style>
 	</body>
 </html>
