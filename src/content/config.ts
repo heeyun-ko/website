@@ -5,15 +5,11 @@ const portfolio = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		pubDate: z.coerce.date(),
-		category: z.enum(['Project', 'Research', 'Publication']).default('Project'),
-		tech: z.array(z.string()).default([]),
-		heroImage: z.string().optional(),
-		links: z.array(z.object({
-			title: z.string(),
-			url: z.string()
-		})).optional(),
+		pubDate: z.date(),
+		// Add other fields that your portfolio items use
 	}),
 });
 
-export const collections = { portfolio }; 
+export const collections = {
+	'portfolio': portfolio
+}; 
