@@ -5,7 +5,14 @@ const portfolio = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.string(),
-		// ... 기타 필요한 필드들
+		category: z.string(),
+		tech: z.array(z.string()),
+		heroImage: z.string(),
+		published: z.boolean(),
+		links: z.array(z.object({
+			title: z.string(),
+			url: z.string()
+		}))
 	}),
 });
 
