@@ -9,7 +9,7 @@ published: true
 links: [
   {
     title: "GitHub",
-    url: "https://github.com/heeyun-ko/medical-project"
+    url: "https://github.com/heeyoun-ko/website"
   }
 ]
 ---
