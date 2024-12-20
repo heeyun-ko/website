@@ -6,7 +6,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
-const portfolioEntries = await getCollection('portfolio');
+// 수정된 부분: published가 true인 항목만 가져오기
+const portfolioEntries = await getCollection('portfolio', ({ data }) => {
+	return data.published === true;
+});
+
+// 날짜순 정렬 추가
+const sortedPortfolioEntries = portfolioEntries.sort((a, b) => 
+	new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
 ---
 
 <!doctype html>
@@ -21,26 +29,10 @@ const portfolioEntries = await getCollection('portfolio');
 				<h1>Portfolio</h1>
 				<div class="grid">
 					{
-						portfolioEntries.map((post) => (
+						sortedPortfolioEntries.map((post) => (  // portfolioEntries를 sortedPortfolioEntries로 변경
 							<div class="project-card">
-								<a href={`/${post.slug}/`}>
-									{post.data.heroImage && (
-										<img 
-												src={post.data.heroImage} 
-												alt={post.data.title}
-												class="hero-image"
-										/>
-									)}
-									<div class="content">
-										<span class="category">{post.data.category}</span>
-										<h2 class="title">{post.data.title}</h2>
-										<p class="description">{post.data.description}</p>
-										<div class="tech-stack">
-											{post.data.tech.map(tech => (
-												<span class="tech-tag">{tech}</span>
-											))}
-										</div>
-									</div>
+								<a href={`/portfolio/${post.slug}/`}>  <!-- URL 경로 수정 -->
+									{/* 나머지 코드 */}
 								</a>
 							</div>
 						))
@@ -50,52 +42,4 @@ const portfolioEntries = await getCollection('portfolio');
 		</main>
 		<Footer />
 	</body>
-</html>
-
-<style>
-	main {
-		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 3rem 1rem;
-	}
-	h1 {
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-	}
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 2rem;
-	}
-	.project-card {
-		border: 1px solid #eee;
-		border-radius: 8px;
-		overflow: hidden;
-		transition: transform 0.2s, box-shadow 0.2s;
-	}
-	.project-card:hover {
-		transform: translateY(-5px);
-	}
-	.hero-image {
-		width: 100%;
-		height: 200px;
-		object-fit: cover;
-	}
-	.title {
-		margin: 0.5rem;
-		font-size: 1.5rem;
-	}
-	.date {
-		margin: 0.5rem;
-		color: #595959;
-	}
-	.description {
-		margin: 0.5rem;
-		color: #444;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-</style> 
+</html> 
