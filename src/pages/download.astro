@@ -1,0 +1,62 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+const title = `Download PDF - ${SITE_TITLE}`;
+const description = "Download Heeyun Ko's resume as a PDF document.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header buttonLabel="Download" />
+		<main>
+			<div class="pdf-container">
+				<div class="pdf-content">
+					<h1>Download</h1>
+					<p>Click the button below to download the resume as a PDF file:</p>
+					<a href="/documents/HeeyunKo_Resume.pdf" class="download-btn" target="_blank">Download</a>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.pdf-container {
+		min-height: calc(100vh - 16rem);
+		padding: 4rem 2rem;
+		text-align: center;
+	}
+
+	.pdf-content {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.download-btn {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 1rem 2rem;
+		font-size: 1.2rem;
+		color: white;
+		background-color: rgb(var(--blue));
+		text-decoration: none;
+		border-radius: 8px;
+	}
+
+	.download-btn:hover {
+		background-color: rgb(var(--blue-dark));
+	}
+</style>
