@@ -6,23 +6,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
-// 디버깅을 위한 로그 추가
-const portfolioEntries = await getCollection('portfolio');
-console.log('All entries:', portfolioEntries);
-
-const filteredEntries = portfolioEntries.filter(entry => {
-	console.log('Entry:', entry.slug, 'Published:', entry.data.published);
-	return entry.data.published === true;
+const posts = await getCollection('portfolio', ({ data }) => {
+	return data.published !== false;
 });
-console.log('Filtered entries:', filteredEntries);
 
-const sortedPortfolioEntries = filteredEntries.sort((a, b) => 
-	new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
-);
-console.log('Sorted entries:', sortedPortfolioEntries);
+console.log('All entries:', posts);
+const filteredPosts = posts.filter(post => post.data.published);
+console.log('Filtered entries:', filteredPosts);
+const sortedPosts = filteredPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+console.log('Sorted entries:', sortedPosts);
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -31,11 +26,10 @@ console.log('Sorted entries:', sortedPortfolioEntries);
 		<Header />
 		<main>
 			<section>
-				<h1>Portfolio</h1>
-				<div class="grid">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{
-						sortedPortfolioEntries.map((post) => (
-							<div class="project-card">
+						sortedPosts.map((post) => (
+							<div class="border p-4 rounded-lg">
 								<a href={`/portfolio/${post.slug}/`}>
 									{post.data.heroImage && (
 										<img src={post.data.heroImage} alt={post.data.title} />
@@ -43,7 +37,7 @@ console.log('Sorted entries:', sortedPortfolioEntries);
 									<h2>{post.data.title}</h2>
 									<p>{post.data.description}</p>
 									<p>
-										<FormattedDate date={new Date(post.data.pubDate)} />
+										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
 							</div>
