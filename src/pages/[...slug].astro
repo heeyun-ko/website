@@ -1,26 +1,21 @@
 e---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../layouts/BlogPost.astro';
-import { render } from 'astro:content';
+import PortfolioPost from '../layouts/PortfolioPost.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post) => {
-		// Use explicit slug if provided, otherwise generate from the file path
-		const slug = post.data.slug || post.id.replace(/\.[^/.]+$/, '');
-		return {
-			params: { slug },
-			props: post,
-		};
-	});
+	const posts = await getCollection('portfolio');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<'portfolio'>;
 
 const post = Astro.props;
-const { Content } = await render(post);
+const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<PortfolioPost {...post.data}>
 	<Content />
-</BlogPost> 
+</PortfolioPost> 
