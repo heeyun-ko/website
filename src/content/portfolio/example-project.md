@@ -27,7 +27,3 @@ Detailed description of the project goes here.
 - Feature 1
 - Feature 2
 - Feature 3
-
-## Technical Details
-
-Technical implementation details go here. 
