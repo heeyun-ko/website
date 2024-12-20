@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 
-const title = `Contact - ${SITE_TITLE}`;
-const description = "Get in touch with us for any questions or concerns.";
+const title = `Documents - ${SITE_TITLE}`;
+const description = "View our important documents and resources in PDF format.";
 ---
 
 <!doctype html>
@@ -16,9 +16,10 @@ const description = "Get in touch with us for any questions or concerns.";
 	<body>
 		<Header />
 		<main>
-			<div class="contact-container">
-				<div class="contact-content">
-					<h1>Contact</h1>
+			<div class="pdf-container">
+				<div class="pdf-content">
+					<h1>Documents</h1>
+					<iframe src="/mnt/data/HeeyunKo_Resume.pdf" class="pdf-viewer" frameborder="0" scrolling="no" width="100%" height="800px"></iframe>
 				</div>
 			</div>
 		</main>
@@ -27,12 +28,12 @@ const description = "Get in touch with us for any questions or concerns.";
 </html>
 
 <style>
-	.contact-container {
+	.pdf-container {
 		min-height: calc(100vh - 16rem);
 		padding: 4rem 2rem;
 	}
 
-	.contact-content {
+	.pdf-content {
 		max-width: 720px;
 		margin: 0 auto;
 	}
@@ -46,13 +47,23 @@ const description = "Get in touch with us for any questions or concerns.";
 		letter-spacing: -0.02em;
 	}
 
+	.pdf-viewer {
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		margin-top: 1rem;
+	}
+
 	@media (max-width: 768px) {
-		.contact-container {
+		.pdf-container {
 			padding: 2rem 1rem;
 		}
 
 		h1 {
 			font-size: 2rem;
 		}
+
+		.pdf-viewer {
+			height: 600px;
+		}
 	}
-</style> 
+</style>
