@@ -7,12 +7,24 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://eindelpov.com',
+	site: 'https://example.com',
 	base: '/',
-	integrations: [mdx(), sitemap(), tailwind()],
+	integrations: [
+		mdx({
+			syntaxHighlight: 'prism',
+			drafts: true,
+		}),
+		sitemap(),
+		tailwind(),
+	],
 	output: 'static',
 	trailingSlash: 'always',
 	build: {
 		format: 'directory'
-	}
+	},
+	collections: {
+		portfolio: {
+			source: 'src/content/portfolio',
+		},
+	},
 });
