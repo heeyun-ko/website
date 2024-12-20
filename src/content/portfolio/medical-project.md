@@ -5,6 +5,7 @@ pubDate: "Dec 20 2023"
 category: "Project"
 tech: ["Python", "Data Analysis", "Healthcare"]
 heroImage: "/blog-placeholder-3.jpg"
+published: true
 links: [
   {
     title: "GitHub",
