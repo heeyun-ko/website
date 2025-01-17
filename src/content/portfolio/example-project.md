@@ -11,7 +11,6 @@ published: true
 ### **고희윤 (Hee yun Ko)**
 
 **주소**: 서울특별시, 대한민국  
-**연락처**: (+82) 10-4781-5065  
 **이메일**: [hy_0127@naver.com](mailto:hy_0127@naver.com)
 
 ---
