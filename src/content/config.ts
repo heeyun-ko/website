@@ -18,28 +18,22 @@ const postings = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.date(),
-		updatedDate: z.date().optional(),
-		heroImage: z.string().optional(),
 		category: z.literal('postings'),
-		tags: z.array(z.string()).optional(),
+		tech: z.array(z.string()).optional(),
 		published: z.boolean()
 	})
 });
 
-const cvDownload = defineCollection({
+const blog = defineCollection({
 	type: 'content',
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.date(),
-		category: z.literal('CV download'),
-		fileUrl: z.string(),
+		category: z.literal('blog'),
+		tech: z.array(z.string()).optional(),
 		published: z.boolean()
 	})
 });
 
-export const collections = {
-	main,
-	postings,
-	cvDownload
-};
+export const collections = { main, postings, blog };
