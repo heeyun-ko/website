@@ -1,0 +1,111 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BlogCard from '../components/BlogCard.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Posts - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<h1>Posts</h1>
+				<p class="tagline">
+					Thoughts, Ideas, and Explorations
+				</p>
+			</section>
+
+			<section class="posts">
+				<div class="posts-grid">
+					<BlogCard
+						title="First Post"
+						description="This is my first blog post about consciousness and cognition."
+						date="2025-03-18"
+						url="/posts/first-post"
+					/>
+					<BlogCard
+						title="Decentralized Innovation"
+						description="Exploring the potential of blockchain-based research networks."
+						date="2025-03-19"
+						url="/posts/decentralized-innovation"
+					/>
+					<BlogCard
+						title="AGI and Human Potential"
+						description="Thoughts on the future of artificial general intelligence."
+						date="2025-03-20"
+						url="/posts/agi-human-potential"
+					/>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 3rem 1rem;
+	}
+
+	section {
+		margin-bottom: 4rem;
+	}
+
+	.hero {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.5rem;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 2rem;
+	}
+
+	.posts-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.tagline {
+			font-size: 1.25rem;
+		}
+
+		.posts-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.tagline {
+			font-size: 1.1rem;
+		}
+	}
+</style> 
