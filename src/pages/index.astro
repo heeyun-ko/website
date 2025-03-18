@@ -13,12 +13,74 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>Hello, I'm Heeyun Ko (Helena)</h1>
-			<p>
-				I'm a medical student with a deep interest in development and technology.
-				<br><br>
-				Exploring new possibilities at the intersection of healthcare and technology.
-			</p>
+			<section class="hero">
+				<h1>Hello, I'm Heeyun Ko (Helena)</h1>
+				<p class="tagline">
+					Medical Student & Tech Enthusiast
+				</p>
+			</section>
+
+			<section class="about">
+				<h2>About Me</h2>
+				<p>
+					I'm a medical student with a deep interest in development and technology.
+					My journey combines the precision of medical science with the innovation of technology.
+					Currently pursuing my medical degree while exploring the intersection of healthcare and technology.
+				</p>
+			</section>
+
+			<section class="interests">
+				<h2>Interests & Focus</h2>
+				<div class="interest-grid">
+					<div class="interest-item">
+						<h3>Healthcare Technology</h3>
+						<p>Exploring the intersection of medicine and technology to improve patient care and healthcare delivery systems</p>
+					</div>
+					<div class="interest-item">
+						<h3>Medical Informatics</h3>
+						<p>Studying how data and technology can enhance medical decision-making and patient outcomes</p>
+					</div>
+					<div class="interest-item">
+						<h3>Web Development</h3>
+						<p>Building tools and platforms that bridge healthcare and technology, focusing on user-friendly medical applications</p>
+					</div>
+					<div class="interest-item">
+						<h3>Research</h3>
+						<p>Engaging in medical research projects that combine traditional medical knowledge with technological innovation</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="experience">
+				<h2>Experience & Projects</h2>
+				<div class="experience-grid">
+					<div class="experience-item">
+						<h3>Medical Education</h3>
+						<p>Currently pursuing medical degree with focus on integrating technology in healthcare</p>
+					</div>
+					<div class="experience-item">
+						<h3>Technical Skills</h3>
+						<p>Proficient in web development, with experience in creating healthcare-focused applications</p>
+					</div>
+					<div class="experience-item">
+						<h3>Research Experience</h3>
+						<p>Participated in medical research projects focusing on technology integration in healthcare</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="connect">
+				<h2>Let's Connect</h2>
+				<p>
+					I'm always interested in connecting with fellow medical professionals, developers, and tech enthusiasts.
+					Feel free to reach out through my social media or email.
+				</p>
+				<div class="social-links">
+					<a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
+					<a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
+					<a href="mailto:your.email@example.com" class="social-link">Email</a>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
@@ -31,15 +93,125 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		margin: 0 auto;
 		padding: 3rem 1rem;
 	}
+
+	section {
+		margin-bottom: 4rem;
+	}
+
+	.hero {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;
 		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 	}
-	p {
+
+	.tagline {
+		font-size: 1.5rem;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 1.5rem;
 		text-align: center;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+
+	p {
 		line-height: 1.6;
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 1.5rem;
+	}
+
+	.interest-grid, .experience-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.interest-item, .experience-item {
+		padding: 1.5rem;
+		background: rgba(var(--gray-light), 0.5);
+		border-radius: 1rem;
+		text-align: left;
+		transition: transform 0.2s ease;
+	}
+
+	.interest-item:hover, .experience-item:hover {
+		transform: translateY(-5px);
+	}
+
+	.interest-item p, .experience-item p {
+		text-align: left;
+		margin-bottom: 0;
+	}
+
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.social-link {
+		padding: 0.75rem 1.5rem;
+		background: rgba(var(--gray-light), 0.5);
+		border-radius: 0.5rem;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		transition: all 0.2s ease;
+	}
+
+	.social-link:hover {
+		background: rgba(var(--gray), 0.1);
+		color: rgb(var(--black));
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.tagline {
+			font-size: 1.25rem;
+		}
+
+		h2 {
+			font-size: 1.75rem;
+		}
+
+		.social-links {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	@media (max-width: 480px) {
+		h1 {
+			font-size: 2rem;
+		}
+
+		.tagline {
+			font-size: 1.1rem;
+		}
+
+		.interest-grid, .experience-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
