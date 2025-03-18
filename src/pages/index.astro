@@ -85,22 +85,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 3rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
 	}
 
 	section {
-		margin-bottom: 4rem;
+		width: 100%;
 	}
 
 	.hero {
 		text-align: center;
-		margin-bottom: 4rem;
+		padding: 2rem 0;
 	}
 
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;
-		line-height: 1;
-		margin-bottom: 1rem;
+		line-height: 1.2;
+		margin-bottom: 1.5rem;
 	}
 
 	.tagline {
@@ -112,14 +115,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	h2 {
 		font-size: 2rem;
 		font-weight: 600;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 		text-align: center;
 	}
 
 	h3 {
 		font-size: 1.25rem;
 		font-weight: 600;
-		margin-bottom: 0.75rem;
+		margin-bottom: 1rem;
 	}
 
 	p {
@@ -134,21 +137,25 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-weight: 600;
 		color: rgb(var(--accent));
 		margin: 2rem 0;
+		text-align: center;
 	}
 
 	.interest-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 		margin-top: 2rem;
 	}
 
 	.interest-item {
-		padding: 1.5rem;
+		padding: 2rem;
 		background: rgba(var(--gray-light), 0.5);
 		border-radius: 1rem;
 		text-align: left;
 		transition: transform 0.2s ease;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.interest-item:hover {
@@ -158,6 +165,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.interest-item p {
 		text-align: left;
 		margin-bottom: 0;
+		flex-grow: 1;
+	}
+
+	.philosophy {
+		background: rgba(var(--gray-light), 0.3);
+		padding: 3rem 2rem;
+		border-radius: 1rem;
 	}
 
 	.philosophy p {
@@ -188,6 +202,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	@media (max-width: 768px) {
+		main {
+			padding: 2rem 1rem;
+			gap: 3rem;
+		}
+
 		h1 {
 			font-size: 2.5rem;
 		}
@@ -204,6 +223,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			font-size: 1.25rem;
 		}
 
+		.philosophy {
+			padding: 2rem 1.5rem;
+		}
+
 		.social-links {
 			flex-direction: column;
 			align-items: center;
@@ -211,6 +234,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	@media (max-width: 480px) {
+		main {
+			padding: 1.5rem 1rem;
+			gap: 2.5rem;
+		}
+
 		h1 {
 			font-size: 2rem;
 		}
@@ -221,6 +249,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.interest-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.interest-item {
+			padding: 1.5rem;
 		}
 	}
 </style>
