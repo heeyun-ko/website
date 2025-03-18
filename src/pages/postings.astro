@@ -1,5 +1,9 @@
 ---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import BlogCard from '../components/BlogCard.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 const posts = [
   {
@@ -20,18 +24,66 @@ const posts = [
 ];
 ---
 
-<section class="blog">
-  <h2>Latest Posts</h2>
-  <div class="blog-grid">
-    {posts.map(post => (
-      <BlogCard title={post.title} description={post.description} link={post.link} />
-    ))}
-  </div>
-</section>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <section class="hero">
+        <h1>Blog & Insights</h1>
+        <p class="tagline">Exploring Ideas Beyond Boundaries</p>
+      </section>
+
+      <section class="blog">
+        <h2>Latest Posts</h2>
+        <div class="blog-grid">
+          {posts.map(post => (
+            <BlogCard title={post.title} description={post.description} link={post.link} />
+          ))}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
 
 <style>
-  .blog {
+  main {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+
+  section {
     margin-bottom: 4rem;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: rgb(var(--gray-dark));
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     text-align: center;
   }
 
