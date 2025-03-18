@@ -8,35 +8,50 @@ import { getCollection } from 'astro:content';
 
 // Get all blog posts
 const posts = await getCollection('posts');
+
+// SEO metadata
+const pageTitle = `Blog Posts - ${SITE_TITLE}`;
+const pageDescription = `Explore our collection of blog posts about ${SITE_DESCRIPTION}`;
+const keywords = ['blog', 'posts', 'articles', 'thoughts', 'ideas'];
+const ogType = 'website';
+const twitterCard = 'summary_large_image';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Posts - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead 
+			title={pageTitle}
+			description={pageDescription}
+			keywords={keywords}
+			og_type={ogType}
+			twitter_card={twitterCard}
+		/>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section class="hero">
-				<h1>Posts</h1>
-				<p class="tagline">
-					Thoughts, Ideas, and Explorations
-				</p>
-			</section>
+			<article class="content">
+				<header class="hero">
+					<h1>Blog Posts</h1>
+					<p class="tagline">
+						Thoughts, Ideas, and Explorations
+					</p>
+				</header>
 
-			<section class="posts">
-				<div class="posts-grid">
-					{posts.map((post) => (
-						<BlogCard
-							title={post.data.title}
-							description={post.data.description}
-							date={post.data.date}
-							slug={post.slug}
-						/>
-					))}
-				</div>
-			</section>
+				<section class="posts" aria-label="Blog posts collection">
+					<div class="posts-grid">
+						{posts.map((post) => (
+							<BlogCard
+								title={post.data.title}
+								description={post.data.description}
+								date={post.data.date}
+								slug={post.slug}
+							/>
+						))}
+					</div>
+				</section>
+			</article>
 		</main>
 		<Footer />
 	</body>
@@ -53,13 +68,14 @@ const posts = await getCollection('posts');
 		gap: 4rem;
 	}
 
-	section {
+	.content {
 		width: 100%;
 	}
 
 	.hero {
 		text-align: center;
 		padding: 2rem 0;
+		margin-bottom: 2rem;
 	}
 
 	h1 {
@@ -67,12 +83,16 @@ const posts = await getCollection('posts');
 		font-weight: 700;
 		line-height: 1.2;
 		margin-bottom: 1.5rem;
+		color: rgb(var(--black));
 	}
 
 	.tagline {
 		font-size: 1.5rem;
 		color: rgb(var(--gray-dark));
 		margin-bottom: 2rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.posts-grid {
