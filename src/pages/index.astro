@@ -81,7 +81,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <style>
 	body {
-		background-color: #F5F5DC;
+		background-color: #FFF8DC;
 		margin: 0;
 		padding: 0;
 	}
@@ -127,6 +127,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.highlight {
 			color: #f7a7bb;
 		}
+
+		.hero, .about {
+			background: #FDF5E6;
+			border-color: #E8D3B9;
+		}
 	}
 
 	main {
@@ -145,7 +150,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.hero {
 		text-align: center;
-		padding: 2rem 0;
+		padding: 2rem;
+		background: #FDF5E6;
+		border-radius: 1rem;
+		border: 1px solid #E8D3B9;
+	}
+
+	.about {
+		background: #FDF5E6;
+		padding: 2rem;
+		border-radius: 1rem;
+		border: 1px solid #E8D3B9;
+	}
+
+	.about p {
+		text-align: left;
+		margin-bottom: 0;
 	}
 
 	h1 {
