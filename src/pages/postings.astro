@@ -9,8 +9,8 @@ const posts = [
 ---
 
 <section class="postings">
-  {posts.map((post) => (
-    <BlogCard {...post} />
+  {posts.map(post => (
+    <BlogCard title={post.title} description={post.description} date={post.date} slug={post.slug} />
   ))}
 </section>
 
