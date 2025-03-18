@@ -86,6 +86,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		padding: 0;
 	}
 
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: #2A2A2A;
+		}
+
+		h1, h2, h3 {
+			color: #E8D3B9;
+		}
+
+		p {
+			color: #D4B08C;
+		}
+
+		.interest-item {
+			background: #3A3A3A;
+			border-color: #4A4A4A;
+		}
+
+		.interest-item:hover {
+			background: #4A4A4A;
+		}
+
+		.philosophy {
+			background: #3A3A3A;
+			border-color: #4A4A4A;
+		}
+
+		.social-link {
+			background: #3A3A3A;
+			border-color: #4A4A4A;
+			color: #E8D3B9;
+		}
+
+		.social-link:hover {
+			background: #4A4A4A;
+			color: #f7a7bb;
+		}
+
+		.highlight {
+			color: #f7a7bb;
+		}
+	}
+
 	main {
 		width: 100%;
 		max-width: 960px;
@@ -145,7 +188,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.highlight {
 		font-size: 1.5rem;
 		font-weight: 600;
-		color: #FF1493;
+		color: #f7a7bb;
 		margin: 2rem auto;
 		text-align: center;
 		display: block;
@@ -214,7 +257,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.social-link:hover {
 		background: #FFF8DC;
-		color: #FF1493;
+		color: #f7a7bb;
 		transform: translateY(-2px);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
