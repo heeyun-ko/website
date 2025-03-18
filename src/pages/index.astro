@@ -88,6 +88,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		display: flex;
 		flex-direction: column;
 		gap: 4rem;
+		background-color: #ffffff;
 	}
 
 	section {
@@ -104,11 +105,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-weight: 700;
 		line-height: 1.2;
 		margin-bottom: 1.5rem;
+		color: #333333;
 	}
 
 	.tagline {
 		font-size: 1.5rem;
-		color: rgb(var(--gray-dark));
+		color: #666666;
 		margin-bottom: 2rem;
 	}
 
@@ -117,12 +119,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-weight: 600;
 		margin-bottom: 2rem;
 		text-align: center;
+		color: #333333;
 	}
 
 	h3 {
 		font-size: 1.25rem;
 		font-weight: 600;
 		margin-bottom: 1rem;
+		color: #333333;
 	}
 
 	p {
@@ -130,6 +134,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		text-align: center;
 		max-width: 800px;
 		margin: 0 auto 1.5rem;
+		color: #666666;
 	}
 
 	.highlight {
@@ -144,26 +149,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.interest-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 		margin-top: 2rem;
 	}
 
 	.interest-item {
 		padding: 2rem;
-		background: rgba(255, 182, 193, 0.2);
+		background: #f8f9fa;
 		border-radius: 1rem;
 		text-align: left;
 		transition: transform 0.2s ease;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		border: 1px solid rgba(255, 182, 193, 0.3);
+		border: 1px solid #e9ecef;
 	}
 
 	.interest-item:hover {
 		transform: translateY(-5px);
-		background: rgba(255, 182, 193, 0.3);
+		background: #ffffff;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 
 	.interest-item p {
@@ -173,10 +179,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.philosophy {
-		background: rgba(255, 182, 193, 0.1);
+		background: #f8f9fa;
 		padding: 3rem 2rem;
 		border-radius: 1rem;
-		border: 1px solid rgba(255, 182, 193, 0.2);
+		border: 1px solid #e9ecef;
 	}
 
 	.philosophy p {
@@ -193,18 +199,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 	.social-link {
 		padding: 0.75rem 1.5rem;
-		background: rgba(255, 182, 193, 0.2);
+		background: #f8f9fa;
 		border-radius: 0.5rem;
 		text-decoration: none;
-		color: rgb(var(--gray-dark));
+		color: #333333;
 		transition: all 0.2s ease;
-		border: 1px solid rgba(255, 182, 193, 0.3);
+		border: 1px solid #e9ecef;
 	}
 
 	.social-link:hover {
-		background: rgba(255, 182, 193, 0.3);
-		color: rgb(var(--black));
+		background: #ffffff;
+		color: #FF69B4;
 		transform: translateY(-2px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 
 	@media (max-width: 768px) {
@@ -229,6 +236,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			font-size: 1.25rem;
 		}
 
+		.interest-grid {
+			grid-template-columns: 1fr;
+		}
+
 		.philosophy {
 			padding: 2rem 1.5rem;
 		}
@@ -247,18 +258,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		h1 {
 			font-size: 2rem;
-		}
-
-		.tagline {
-			font-size: 1.1rem;
-		}
-
-		.interest-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.interest-item {
-			padding: 1.5rem;
 		}
 	}
 </style>
