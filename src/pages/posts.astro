@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts
+const posts = await getCollection('posts');
 ---
 
 <!doctype html>
@@ -23,24 +27,14 @@ import BlogCard from '../components/BlogCard.astro';
 
 			<section class="posts">
 				<div class="posts-grid">
-					<BlogCard
-						title="First Post"
-						description="This is my first blog post about consciousness and cognition."
-						date={new Date('2025-03-18')}
-						url="/posts/first-post"
-					/>
-					<BlogCard
-						title="Decentralized Innovation"
-						description="Exploring the potential of blockchain-based research networks."
-						date={new Date('2025-03-19')}
-						url="/posts/decentralized-innovation"
-					/>
-					<BlogCard
-						title="AGI and Human Potential"
-						description="Thoughts on the future of artificial general intelligence."
-						date={new Date('2025-03-20')}
-						url="/posts/agi-human-potential"
-					/>
+					{posts.map((post) => (
+						<BlogCard
+							title={post.data.title}
+							description={post.data.description}
+							date={post.data.date}
+							url={`/posts/${post.slug}`}
+						/>
+					))}
 				</div>
 			</section>
 		</main>
