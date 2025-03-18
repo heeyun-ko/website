@@ -1,12 +1,24 @@
 ---
-title: 'First post'
-description: 'my test purpose'
-meta_title: 'Custom SEO Title'
-meta_description: 'Custom SEO Description'
-keywords:
-  - keyword1
-  - keyword2
-og_title: 'Custom Social Title'
-og_description: 'Custom Social Description'
-og_type: article
+import BlogCard from '../components/BlogCard.astro';
+
+const posts = [
+  { title: "첫 번째 포스트", description: "이것은 첫 번째 글의 설명입니다.", date: new Date("2024-03-18"), slug: "first-post" },
+  { title: "두 번째 포스트", description: "이것은 두 번째 글의 설명입니다.", date: new Date("2024-03-19"), slug: "second-post" },
+  { title: "세 번째 포스트", description: "이것은 세 번째 글의 설명입니다.", date: new Date("2024-03-20"), slug: "third-post" }
+];
 ---
+
+<section class="postings">
+  {posts.map((post) => (
+    <BlogCard {...post} />
+  ))}
+</section>
+
+<style>
+  .postings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+</style>
