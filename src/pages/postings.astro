@@ -5,23 +5,10 @@ import Footer from '../components/Footer.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-const posts = [
-  {
-    title: 'Understanding AGI & Human Potential',
-    description: 'A deep dive into how AGI can coexist with humanity.',
-    link: '/blog/agi-human-potential'
-  },
-  {
-    title: 'Exploring Consciousness Through Dreams',
-    description: 'How dreams can be a window into higher dimensions.',
-    link: '/blog/dream-consciousness'
-  },
-  {
-    title: 'Decentralized Innovation & The Future of Research',
-    description: 'Rethinking how knowledge is explored outside traditional institutions.',
-    link: '/blog/decentralized-innovation'
-  }
-];
+const posts = await Astro.glob('../content/posts/*.md');
+
+// 최신 게시글이 먼저 나오도록 정렬
+posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 ---
 
 <!doctype html>
@@ -41,7 +28,7 @@ const posts = [
         <h2>Latest Posts</h2>
         <div class="blog-grid">
           {posts.map(post => (
-            <BlogCard title={post.title} description={post.description} link={post.link} />
+            <BlogCard title={post.frontmatter.title} description={post.frontmatter.excerpt} link={post.url} />
           ))}
         </div>
       </section>
