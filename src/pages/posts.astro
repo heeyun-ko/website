@@ -31,7 +31,7 @@ const posts = await getCollection('posts');
 						<BlogCard
 							title={post.data.title}
 							description={post.data.description}
-							date={post.data.date}
+							date={new Date(post.data.date)}
 							url={`/posts/${post.slug}`}
 						/>
 					))}
