@@ -26,19 +26,19 @@ import BlogCard from '../components/BlogCard.astro';
 					<BlogCard
 						title="First Post"
 						description="This is my first blog post about consciousness and cognition."
-						date="2025-03-18"
+						date={new Date('2025-03-18')}
 						url="/posts/first-post"
 					/>
 					<BlogCard
 						title="Decentralized Innovation"
 						description="Exploring the potential of blockchain-based research networks."
-						date="2025-03-19"
+						date={new Date('2025-03-19')}
 						url="/posts/decentralized-innovation"
 					/>
 					<BlogCard
 						title="AGI and Human Potential"
 						description="Thoughts on the future of artificial general intelligence."
-						date="2025-03-20"
+						date={new Date('2025-03-20')}
 						url="/posts/agi-human-potential"
 					/>
 				</div>
@@ -54,22 +54,25 @@ import BlogCard from '../components/BlogCard.astro';
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 3rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
 	}
 
 	section {
-		margin-bottom: 4rem;
+		width: 100%;
 	}
 
 	.hero {
 		text-align: center;
-		margin-bottom: 4rem;
+		padding: 2rem 0;
 	}
 
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;
-		line-height: 1;
-		margin-bottom: 1rem;
+		line-height: 1.2;
+		margin-bottom: 1.5rem;
 	}
 
 	.tagline {
@@ -86,6 +89,11 @@ import BlogCard from '../components/BlogCard.astro';
 	}
 
 	@media (max-width: 768px) {
+		main {
+			padding: 2rem 1rem;
+			gap: 3rem;
+		}
+
 		h1 {
 			font-size: 2.5rem;
 		}
@@ -100,6 +108,11 @@ import BlogCard from '../components/BlogCard.astro';
 	}
 
 	@media (max-width: 480px) {
+		main {
+			padding: 1.5rem 1rem;
+			gap: 2.5rem;
+		}
+
 		h1 {
 			font-size: 2rem;
 		}
