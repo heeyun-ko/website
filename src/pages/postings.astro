@@ -2,23 +2,43 @@
 import BlogCard from '../components/BlogCard.astro';
 
 const posts = [
-  { title: "첫 번째 포스트", description: "이것은 첫 번째 글의 설명입니다.", date: new Date("2024-03-18"), slug: "first-post" },
-  { title: "두 번째 포스트", description: "이것은 두 번째 글의 설명입니다.", date: new Date("2024-03-19"), slug: "second-post" },
-  { title: "세 번째 포스트", description: "이것은 세 번째 글의 설명입니다.", date: new Date("2024-03-20"), slug: "third-post" }
+  {
+    title: 'Understanding AGI & Human Potential',
+    description: 'A deep dive into how AGI can coexist with humanity.',
+    link: '/blog/agi-human-potential'
+  },
+  {
+    title: 'Exploring Consciousness Through Dreams',
+    description: 'How dreams can be a window into higher dimensions.',
+    link: '/blog/dream-consciousness'
+  },
+  {
+    title: 'Decentralized Innovation & The Future of Research',
+    description: 'Rethinking how knowledge is explored outside traditional institutions.',
+    link: '/blog/decentralized-innovation'
+  }
 ];
 ---
 
-<section class="postings">
-  {posts.map(post => (
-    <BlogCard title={post.title} description={post.description} date={post.date} slug={post.slug} />
-  ))}
+<section class="blog">
+  <h2>Latest Posts</h2>
+  <div class="blog-grid">
+    {posts.map(post => (
+      <BlogCard title={post.title} description={post.description} link={post.link} />
+    ))}
+  </div>
 </section>
 
 <style>
-  .postings {
+  .blog {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
   }
 </style>
