@@ -19,11 +19,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</section>
 
 			<section class="about">
-				<h2>About Me</h2>
-				<p>
-					I am <strong>Heeyun Ko (Helena)</strong>, known as Eindel in the digital realm. As a multidisciplinary explorer driven by curiosity and the pursuit of knowledge beyond conventional boundaries, 
-					I seek to uncover new dimensions of understanding—whether in <strong>human consciousness, artificial intelligence, or decentralized innovation</strong>.
-				</p>
+				<div class="about-container">
+					<div class="profile-image">
+						<img src="/profile.jpg" alt="Heeyun Ko" width="300" height="300" />
+					</div>
+					<div class="about-content">
+						<h2>About Me</h2>
+						<p>
+							I am a medical student with an insatiable curiosity that extends far beyond the realm of medicine. 
+							My journey is characterized by a deep fascination with the intersection of healthcare, technology, and human experience. 
+							Through this platform, I share my explorations in medicine, research, and various interdisciplinary projects.
+						</p>
+					</div>
+				</div>
 			</section>
 
 			<section class="interests">
@@ -344,6 +352,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		.connect p {
 			font-size: 1rem;
 		}
+
+		.about-container {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.profile-image {
+			flex: 0 0 auto;
+			max-width: 250px;
+			margin: 0 auto;
+		}
 	}
 
 	@media (max-width: 480px) {
@@ -389,5 +408,28 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-color: #ff3333;
 		transform: translateY(-2px);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	.about-container {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.profile-image {
+		flex: 0 0 300px;
+	}
+
+	.profile-image img {
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.about-content {
+		flex: 1;
 	}
 </style>
