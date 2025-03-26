@@ -116,11 +116,25 @@ import { getUrl } from '../utils/url';
 	@media (max-width: 768px) {
 		nav {
 			padding: 0 1rem;
-			height: 90px;
+			height: 60px;
 		}
 
 		.nav-links {
-			display: none;
+			display: flex;
+			gap: 1rem;
+		}
+
+		.nav-links a {
+			font-size: 16px;
+		}
+
+		.brand span {
+			font-size: 20px;
+		}
+
+		.brand-icon {
+			width: 20px;
+			height: 40px;
 		}
 	}
 </style>
