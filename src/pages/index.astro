@@ -50,7 +50,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							<p>Creating an efficient and comfortable workspace for productivity and creativity.</p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card alternate">
 						<img src="/images/mickey-white.jpg" alt="White Mickey Mouse shaped device" />
 						<div class="card-content">
 							<h3>Design<br/>Development</h3>
@@ -64,7 +64,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 							<p>Exploring self-expression through minimalist style and natural moments.</p>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card alternate">
 						<img src="/images/winter-style.jpg" alt="Winter fashion mirror selfie" />
 						<div class="card-content">
 							<h3>Design<br/>Development</h3>
@@ -258,6 +258,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		color: var(--text-color);
 		opacity: 0.7;
 		margin: 0;
+	}
+
+	.card.alternate .card-content {
+		background: var(--primary-color);
+	}
+
+	.card.alternate .card-content h3,
+	.card.alternate .card-content p {
+		color: var(--white);
 	}
 
 	@media (max-width: 768px) {
