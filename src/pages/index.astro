@@ -215,6 +215,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background: var(--white);
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 	}
 
 	.card img {
@@ -222,10 +223,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		height: 453.89px;
 		object-fit: cover;
 		object-position: center;
+		display: block;
+		margin: 0;
 	}
 
 	.card-content {
 		padding: 23.89px;
+		background: var(--white);
 	}
 
 	.card-content h3 {
