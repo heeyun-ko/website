@@ -24,10 +24,14 @@ import { getUrl } from '../utils/url';
 		--text-color: #291F1E;
 		--nav-bg: #FFFCF0;
 		--border-color: #9EB4C8;
+		--sage-green: #8FA969;
+		--soft-pink: #FFC9C5;
+		--pale-blue: #9EB4C8;
+		--ivory: #FFFCF0;
 	}
 
 	nav {
-		background-color: var(--nav-bg);
+		background: url('/header-bg.jpg') center/cover;
 		height: 120px;
 		display: flex;
 		align-items: center;
@@ -38,6 +42,7 @@ import { getUrl } from '../utils/url';
 		top: 0;
 		z-index: 100;
 		transition: transform 0.3s ease;
+		border-bottom: 1px solid var(--border-color);
 	}
 
 	nav.nav-hidden {
