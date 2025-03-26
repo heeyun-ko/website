@@ -18,7 +18,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<div class="hero-content">
 					<h1>Eindel's log</h1>
 					<p class="hero-subtitle">Eindel is passionate to a lot of things in the world XD.</p>
-					<a href="#about" class="cta-button">Continue to Read</a>
+					<a href="#cards" class="cta-button">Continue to Read</a>
 				</div>
 				<div class="hero-image">
 					<img src="/hero-bg.jpg" alt="Minimalistic art with rounded corners featuring green, pink, and blue shapes" />
@@ -41,7 +41,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 
-			<section class="cards">
+			<section class="cards" id="cards">
 				<div class="card-grid">
 					<div class="card">
 						<img src="/images/workspace.jpg" alt="Workspace setup with multiple monitors" />
@@ -154,6 +154,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		text-decoration: none;
 		font-size: 16.72px;
 		margin-top: 20px;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		background: rgba(255, 255, 255, 0.9);
+		transform: translateY(-2px);
 	}
 
 	.content {
@@ -274,5 +280,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			width: 100%;
 			max-width: 382.22px;
 		}
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 </style>
