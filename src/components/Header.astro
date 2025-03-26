@@ -124,28 +124,3 @@ import { getUrl } from '../utils/url';
 		}
 	}
 </style>
-
-<script>
-	let lastScroll = 0;
-	const nav = document.querySelector('nav');
-	const scrollThreshold = 50; // 스크롤 감지 임계값
-
-	window.addEventListener('scroll', () => {
-		const currentScroll = window.pageYOffset;
-		
-		if (currentScroll <= 0) {
-			nav.classList.remove('nav-hidden');
-			return;
-		}
-		
-		if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
-			// 아래로 스크롤
-			nav.classList.add('nav-hidden');
-		} else {
-			// 위로 스크롤
-			nav.classList.remove('nav-hidden');
-		}
-		
-		lastScroll = currentScroll;
-	});
-</script>
