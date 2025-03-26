@@ -14,7 +14,7 @@ import { getUrl } from '../utils/url';
 		<div class="nav-links">
 			<a href="/" class="active">Home</a>
 			<a href="/posts">Posts</a>
-			<a href="/cv">CV</a>
+			<a href="/download">CV</a>
 		</div>
 		<button class="theme-toggle" aria-label="Toggle theme">
 			<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,6 +56,11 @@ import { getUrl } from '../utils/url';
 		width: 100%;
 		top: 0;
 		z-index: 100;
+		transition: transform 0.3s ease;
+	}
+
+	nav.nav-hidden {
+		transform: translateY(-100%);
 	}
 
 	.brand {
@@ -168,3 +173,28 @@ import { getUrl } from '../utils/url';
 		}
 	}
 </style>
+
+<script>
+	let lastScroll = 0;
+	const nav = document.querySelector('nav');
+	const scrollThreshold = 50; // 스크롤 감지 임계값
+
+	window.addEventListener('scroll', () => {
+		const currentScroll = window.pageYOffset;
+		
+		if (currentScroll <= 0) {
+			nav.classList.remove('nav-hidden');
+			return;
+		}
+		
+		if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+			// 아래로 스크롤
+			nav.classList.add('nav-hidden');
+		} else {
+			// 위로 스크롤
+			nav.classList.remove('nav-hidden');
+		}
+		
+		lastScroll = currentScroll;
+	});
+</script>
