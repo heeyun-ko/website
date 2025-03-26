@@ -6,242 +6,132 @@ import { getUrl } from '../utils/url';
 ---
 
 <header>
-	<nav class="nav-wrapper">
+	<nav>
 		<a href="/" class="brand">
-			<img src="/icon.png" alt="Blog Logo" width="24" height="24" class="brand-icon" />
-			<span>Point of View by Eindel</span>
+			<div class="brand-icon"></div>
+			<span>LUXURY</span>
+			<span>Interior</span>
 		</a>
 		<div class="nav-links">
-			<a href="/">Home</a>
-			<a href="/posts">Posts</a>
-			<a href="/download">Download</a>
+			<a href="/" class="active">Home</a>
+			<a href="/about">About US</a>
+			<a href="/services">Services</a>
+			<a href="/projects">Projects</a>
+			<a href="/team">Team</a>
+			<a href="/career">Career</a>
 		</div>
-		<div class="nav-actions">
-			<button class="theme-toggle" aria-label="Toggle theme">
-				<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<circle cx="12" cy="12" r="5"></circle>
-					<line x1="12" y1="1" x2="12" y2="3"></line>
-					<line x1="12" y1="21" x2="12" y2="23"></line>
-					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-					<line x1="1" y1="12" x2="3" y2="12"></line>
-					<line x1="21" y1="12" x2="23" y2="12"></line>
-					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-				</svg>
-				<svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-				</svg>
-			</button>
-		</div>
+		<a href="/contact" class="contact-btn">Contact Us</a>
 	</nav>
 </header>
 
 <script src="../scripts/theme.js"></script>
 
 <style>
-	header {
-		position: sticky;
-		top: 0;
-		z-index: 100;
-		background: #E8D3B9; /* 진한 베이지 */
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-		border-bottom: 1px solid #D4B08C; /* 더 진한 베이지 테두리 */
-		transition: var(--theme-transition);
+	:root {
+		--primary-color: #8FA969;
+		--text-color: #291F1E;
+		--nav-bg: #FFFCF0;
+		--border-color: #9EB4C8;
 	}
 
 	nav {
-		height: 4rem;
-		padding: 0 1.5rem;
-	}
-
-	.nav-wrapper {
-		max-width: 1200px;
-		height: 100%;
-		margin: 0 auto;
+		background-color: var(--nav-bg);
+		height: 93.17px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 0 5rem;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 100;
 	}
 
-	.nav-brand {
+	.brand {
 		display: flex;
 		align-items: center;
-		min-width: 0;
-	}
-
-	.brand-link {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
+		gap: 0.5rem;
 		text-decoration: none;
-		color: rgb(var(--black));
-		font-weight: 600;
-		padding: 0.5rem;
-		margin: -0.5rem;
-		border-radius: 0.75rem;
-		transition: all 0.2s ease;
+		color: var(--text-color);
 	}
 
 	.brand-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		background: rgba(var(--gray-light), 0.5);
-		border-radius: 0.85rem;
-		padding: 0.25rem;
-		flex-shrink: 0;
+		width: 23.89px;
+		height: 47.78px;
+		background: var(--primary-color);
+		position: relative;
 	}
 
-	.brand-text {
-		font-size: 1.125rem;
-		font-weight: 600;
-		letter-spacing: -0.01em;
-		color: rgb(var(--black));
+	.brand-icon::before,
+	.brand-icon::after {
+		content: '';
+		position: absolute;
+		background: var(--primary-color);
+	}
+
+	.brand-icon::before {
+		width: 18.86px;
+		height: 0.98px;
+		left: 2.19px;
+		bottom: 5.79px;
+	}
+
+	.brand-icon::after {
+		width: 1.10px;
+		height: 32.94px;
+		left: 11.07px;
+		top: 6.1px;
+	}
+
+	.brand span {
+		font-size: 22.43px;
+		font-weight: 300;
+	}
+
+	.brand span:last-child {
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 
 	.nav-links {
 		display: flex;
 		gap: 2rem;
-		align-items: center;
-		margin: 0 auto;
-	}
-
-	.nav-actions {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
 	}
 
 	.nav-links a {
-		color: #000000;
+		color: var(--text-color);
 		text-decoration: none;
-		font-weight: 400;
-		transition: color 0.3s ease;
+		font-size: 19.11px;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
 	}
 
 	.nav-links a:hover {
-		color: #f7a7bb;
+		opacity: 1;
 	}
 
-	.nav-links a[href="/download"] {
-		color: inherit;
+	.nav-links a.active {
+		opacity: 1;
+		font-weight: 700;
 	}
 
-	.nav-links a[href="/download"]:hover {
-		color: #f7a7bb;
-	}
-
-	.nav-links a[href="https://eindelpov.com/documents/HeeyunKo_Resume.pdf"] {
-		color: #ff0000;
-	}
-
-	.nav-links a[href="https://eindelpov.com/documents/HeeyunKo_Resume.pdf"]:hover {
-		color: #ff3333;
+	.contact-btn {
+		padding: 9.56px 19.11px;
+		border: 1.19px solid var(--border-color);
+		border-radius: 4px;
+		color: var(--text-color);
+		text-decoration: none;
+		font-size: 16.72px;
 	}
 
 	@media (max-width: 768px) {
 		nav {
 			padding: 0 1rem;
-			height: 3.75rem;
+			height: 70px;
 		}
 
 		.nav-links {
-			gap: 1.5rem;
-		}
-
-		.brand {
-			font-size: 1.25rem;
-		}
-
-		.brand::before {
-			content: "POV by Eindel";
-		}
-
-		.brand span {
 			display: none;
-		}
-
-		.brand-icon {
-			width: 20px;
-			height: 20px;
-		}
-	}
-
-	@media (max-width: 480px) {
-		nav {
-			height: 3.5rem;
-			padding: 0 0.75rem;
-		}
-
-		.nav-links {
-			gap: 1rem;
-		}
-	}
-
-	.brand {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: #333333;
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.brand-icon {
-		width: 24px;
-		height: 24px;
-	}
-
-	.theme-toggle {
-		background: none;
-		border: none;
-		padding: 0.5rem;
-		cursor: pointer;
-		color: #333333;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 0.5rem;
-		transition: all 0.2s ease;
-	}
-
-	.theme-toggle:hover {
-		background: rgba(0, 0, 0, 0.05);
-	}
-
-	.sun-icon, .moon-icon {
-		width: 1.25rem;
-		height: 1.25rem;
-	}
-
-	.sun-icon {
-		display: block;
-	}
-
-	.moon-icon {
-		display: none;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		.sun-icon {
-			display: none;
-		}
-
-		.moon-icon {
-			display: block;
-		}
-
-		.theme-toggle {
-			color: #ffffff;
-		}
-
-		.theme-toggle:hover {
-			background: rgba(255, 255, 255, 0.1);
 		}
 	}
 </style>
