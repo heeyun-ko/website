@@ -32,8 +32,6 @@ const { Content } = await post.render();
 		<main>
 			<BlogPost {...post.data}>
 				<div class="post-content">
-					<h2>Hakwan Lau 교수님 연구실</h2>
-					<p><a href="https://www.ibs.re.kr/cnir/">Hakwan Lau 교수님 연구실</a></p>
 					<Content />
 				</div>
 			</BlogPost>
@@ -48,10 +46,11 @@ const { Content } = await post.render();
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 3rem 1rem;
+		margin-top: 160px;
 	}
 
 	.post-content {
-		margin-top: 160px;
+		margin-top: 0;
 		padding: 0 2rem;
 		max-width: 800px;
 		margin-inline: auto;
@@ -82,7 +81,7 @@ const { Content } = await post.render();
 		}
 
 		.post-content {
-			font-size: 1rem;
+			padding: 0 1rem;
 		}
 	}
 
