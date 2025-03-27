@@ -13,10 +13,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				margin-top: 160px; /* 120px에서 160px로 증가 */
-				padding: 0 1em;
-				max-width: 1200px;
-				margin-inline: auto;
+				margin: 200px auto 0;  /* 상단 여백을 120px에서 200px로 증가 */
+				padding: 0 1rem;
+				max-width: 800px;
+				width: 100%;
 			}
 			.title {
 				margin-bottom: 1em;
