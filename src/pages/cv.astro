@@ -8,130 +8,50 @@ import { SITE_TITLE } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`CV - ${SITE_TITLE}`} description="Curriculum Vitae of Heeyun Ko" />
+		<BaseHead title={`CV - ${SITE_TITLE}`} description="Curriculum Vitae" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<div class="cv-container">
-				<div class="cv-header">
-					<h1>Curriculum Vitae</h1>
-					<p class="subtitle">Heeyun Ko</p>
-				</div>
-
-				<section class="cv-section">
+			<article>
+				<div class="prose">
+					<div class="title">
+						<h1>CV</h1>
+					</div>
+					<p>
+						안녕하세요! 저는 고희윤입니다.
+					</p>
+					<p>
+						제 삶은 늘 호기심으로 가득 차 있었어요. 의대에 입학했을 때부터 저는 단순히 의사가 되는 것이 아니라, 의학을 통해 세상을 이해하고 변화시키고 싶었거든요. 지금은 IBS의 연구실에서 의식과 계산 신경과학이라는 정말 흥미로운 분야를 탐구하고 있어요.
+					</p>
 					<h2>Education</h2>
-					<div class="timeline">
-						<div class="timeline-item">
-							<div class="timeline-date">2020 - Present</div>
-							<div class="timeline-content">
-								<h3>Chung-Ang University College of Medicine</h3>
-								<p>Bachelor of Medicine</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="cv-section">
+					<ul>
+						<li>중앙대학교 의과대학 (2020 - Present)</li>
+					</ul>
 					<h2>Research Experience</h2>
-					<div class="timeline">
-						<div class="timeline-item">
-							<div class="timeline-date">2024 - Present</div>
-							<div class="timeline-content">
-								<h3>IBS Center for Neuroscience Imaging Research</h3>
-								<p>Research Assistant</p>
-								<ul>
-									<li>Working on consciousness and computational neuroscience</li>
-									<li>Conducting research under Prof. Hakwan Lau</li>
-								</ul>
-							</div>
-						</div>
-						<div class="timeline-item">
-							<div class="timeline-date">2023</div>
-							<div class="timeline-content">
-								<h3>Chung-Ang University Neurogenomics Lab</h3>
-								<p>Research Intern</p>
-								<ul>
-									<li>Learned nucleic acid extraction and PCR techniques</li>
-									<li>Gained hands-on experience in molecular biology</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="cv-section">
-					<h2>Professional Experience</h2>
-					<div class="timeline">
-						<div class="timeline-item">
-							<div class="timeline-date">2023</div>
-							<div class="timeline-content">
-								<h3>Seoul National University JW Lee Global Medical Center</h3>
-								<p>Intern</p>
-								<ul>
-									<li>Explored global health issues</li>
-									<li>Gained international healthcare experience</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="cv-section">
-					<h2>Projects & Achievements</h2>
-					<div class="achievements-grid">
-						<div class="achievement-card">
-							<h3>NeuroXi Community</h3>
-							<p>Founder of a neuroscience community focusing on computational neuroscience and brain-computer interfaces</p>
-						</div>
-						<div class="achievement-card">
-							<h3>Digital Healthcare Hackathon 2023</h3>
-							<p>AI Center Director's Award for innovative approach to rare disease diagnosis using LLM</p>
-						</div>
-						<div class="achievement-card">
-							<h3>Startup Experience</h3>
-							<p>Founded 'Aphrodot' and developed 'GodJam' sleep consulting service</p>
-						</div>
-					</div>
-				</section>
-
-				<section class="cv-section">
-					<h2>Skills</h2>
-					<div class="skills-grid">
-						<div class="skill-category">
-							<h3>Research</h3>
-							<ul>
-								<li>Molecular Biology Techniques</li>
-								<li>Neuroscience Research</li>
-								<li>Data Analysis</li>
-							</ul>
-						</div>
-						<div class="skill-category">
-							<h3>Technical</h3>
-							<ul>
-								<li>Python</li>
-								<li>Data Visualization</li>
-								<li>Project Management</li>
-							</ul>
-						</div>
-						<div class="skill-category">
-							<h3>Languages</h3>
-							<ul>
-								<li>Korean (Native)</li>
-								<li>English (Professional)</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-				<section class="cv-section">
+					<ul>
+						<li>IBS Center for Neuroscience Imaging Research (2024 - Present)</li>
+						<li>중앙대학교 신경유전체학 연구실 (2023)</li>
+						<li>서울대학교 JW Lee 글로벌 의학센터 인턴십 (2023)</li>
+					</ul>
+					<h2>Projects</h2>
+					<ul>
+						<li>NeuroXi Community Founder</li>
+						<li>Aphrodot - GodJam Sleep Consulting Service</li>
+					</ul>
+					<h2>Awards</h2>
+					<ul>
+						<li>2023 디지털 헬스케어 해커톤 AI 센터장상</li>
+						<li>TEU MED 4th 혁신 콘테스트 참가</li>
+						<li>중앙대 LINC 3.0 스타트업 지원 프로그램 공식 벤처 클럽 인정</li>
+					</ul>
 					<h2>Contact</h2>
-					<div class="contact-info">
-						<p><strong>Email:</strong> <a href="mailto:eindel1217@gmail.com">eindel1217@gmail.com</a></p>
-						<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/heeyunko-42b517256/" target="_blank">linkedin.com/in/heeyunko-42b517256/</a></p>
-					</div>
-				</section>
-			</div>
+					<ul>
+						<li>Email: eindel1217@gmail.com</li>
+						<li>LinkedIn: <a href="https://www.linkedin.com/in/heeyunko-42b517256/">linkedin.com/in/heeyunko-42b517256/</a></li>
+					</ul>
+				</div>
+			</article>
 		</main>
 		<Footer />
 	</body>
@@ -145,211 +65,37 @@ import { SITE_TITLE } from '../consts';
 		padding: 3rem 1rem;
 		margin-top: 160px;
 	}
-
-	.cv-container {
-		max-width: 800px;
-		margin: 0 auto;
-		background: white;
-		padding: 2rem;
-		border-radius: 12px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
-
-	.cv-header {
+	.title {
+		margin-bottom: 1em;
+		padding: 1em 0;
 		text-align: center;
-		margin-bottom: 3rem;
-		padding-bottom: 2rem;
-		border-bottom: 2px solid rgb(var(--primary));
+		line-height: 1;
 	}
-
-	.cv-header h1 {
-		font-size: 2.5rem;
-		color: rgb(var(--primary));
-		margin: 0;
+	.title h1 {
+		margin: 0 0 0.5em 0;
 	}
-
-	.subtitle {
-		font-size: 1.5rem;
-		color: rgb(var(--gray));
-		margin: 1rem 0 0;
+	.prose {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 1em;
+		color: rgb(var(--gray-dark));
 	}
-
-	.cv-section {
-		margin-bottom: 2.5rem;
+	.prose h2 {
+		margin: 2em 0 1em;
+		color: rgb(var(--black));
 	}
-
-	.cv-section h2 {
-		font-size: 1.8rem;
-		color: rgb(var(--primary));
-		margin-bottom: 1.5rem;
-		padding-bottom: 0.5rem;
-		border-bottom: 1px solid rgb(var(--gray));
+	.prose ul {
+		padding-left: 1.5em;
 	}
-
-	.timeline {
-		position: relative;
-		padding-left: 2rem;
+	.prose li {
+		margin-bottom: 0.5em;
 	}
-
-	.timeline::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: 2px;
-		background: rgb(var(--primary));
-	}
-
-	.timeline-item {
-		position: relative;
-		margin-bottom: 2rem;
-		padding-left: 1.5rem;
-	}
-
-	.timeline-item::before {
-		content: '';
-		position: absolute;
-		left: -0.5rem;
-		top: 0.5rem;
-		width: 1rem;
-		height: 1rem;
-		background: rgb(var(--primary));
-		border-radius: 50%;
-	}
-
-	.timeline-date {
-		font-weight: bold;
-		color: rgb(var(--primary));
-		margin-bottom: 0.5rem;
-	}
-
-	.timeline-content h3 {
-		font-size: 1.3rem;
-		margin: 0 0 0.5rem;
-	}
-
-	.timeline-content ul {
-		margin: 0.5rem 0 0;
-		padding-left: 1.5rem;
-	}
-
-	.timeline-content li {
-		margin-bottom: 0.3rem;
-	}
-
-	.achievements-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 1.5rem;
-	}
-
-	.achievement-card {
-		background: rgb(var(--light-gray));
-		padding: 1.5rem;
-		border-radius: 8px;
-		transition: transform 0.2s;
-	}
-
-	.achievement-card:hover {
-		transform: translateY(-2px);
-	}
-
-	.achievement-card h3 {
-		font-size: 1.2rem;
-		color: rgb(var(--primary));
-		margin: 0 0 0.8rem;
-	}
-
-	.skills-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 2rem;
-	}
-
-	.skill-category h3 {
-		font-size: 1.2rem;
-		color: rgb(var(--primary));
-		margin-bottom: 1rem;
-	}
-
-	.skill-category ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.skill-category li {
-		margin-bottom: 0.5rem;
-		padding-left: 1.5rem;
-		position: relative;
-	}
-
-	.skill-category li::before {
-		content: '•';
-		color: rgb(var(--primary));
-		position: absolute;
-		left: 0;
-	}
-
-	.contact-info {
-		background: rgb(var(--light-gray));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-
-	.contact-info p {
-		margin: 0.5rem 0;
-	}
-
-	.contact-info a {
+	.prose a {
 		color: rgb(var(--primary));
 		text-decoration: none;
-		transition: color 0.2s;
 	}
-
-	.contact-info a:hover {
-		color: rgb(var(--primary-dark));
-	}
-
-	@media (max-width: 768px) {
-		main {
-			padding: 2rem 1rem;
-			margin-top: 120px;
-		}
-
-		.cv-container {
-			padding: 1.5rem;
-		}
-
-		.cv-header h1 {
-			font-size: 2rem;
-		}
-
-		.subtitle {
-			font-size: 1.2rem;
-		}
-
-		.cv-section h2 {
-			font-size: 1.5rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		main {
-			padding: 1.5rem 1rem;
-		}
-
-		.cv-container {
-			padding: 1rem;
-		}
-
-		.timeline {
-			padding-left: 1.5rem;
-		}
-
-		.achievements-grid {
-			grid-template-columns: 1fr;
-		}
+	.prose a:hover {
+		text-decoration: underline;
 	}
 </style> 

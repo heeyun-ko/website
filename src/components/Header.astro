@@ -6,135 +6,57 @@ import { getUrl } from '../utils/url';
 
 <header>
 	<nav>
-		<a href="/" class="brand">
-			<div class="brand-icon"></div>
-			<span>EINDELPOV</span>
-		</a>
-		<div class="nav-links">
-			<a href="/" class="active">Home</a>
-			<a href="/posts">Posts</a>
-			<a href="/download">CV</a>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/cv">CV</HeaderLink>
 		</div>
 	</nav>
 </header>
 
 <style>
-	:root {
-		--primary-color: #8FA969;
-		--text-color: #291F1E;
-		--nav-bg: #FFFCF0;
-		--border-color: #9EB4C8;
-		--sage-green: #8FA969;
-		--soft-pink: #FFC9C5;
-		--pale-blue: #9EB4C8;
-		--ivory: #FFFCF0;
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
 	}
 
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
 	nav {
-		background: var(--nav-bg);
-		height: 80px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 5rem;
-		position: fixed;
-		width: 100%;
-		top: 0;
-		z-index: 100;
-		transition: transform 0.3s ease;
-		border-bottom: 1px solid var(--border-color);
+		padding: 1em 0;
 	}
-
-	nav.nav-hidden {
-		transform: translateY(-100%);
-	}
-
-	.brand {
+	.internal-links {
 		display: flex;
-		align-items: center;
-		gap: 1rem;
+		gap: 1em;
+	}
+	.internal-links a {
+		color: rgb(var(--black));
 		text-decoration: none;
-		color: var(--text-color);
+		transition: color 0.2s ease;
 	}
-
-	.brand-icon {
-		width: 25px;
-		height: 50px;
-		background: var(--primary-color);
-		position: relative;
+	.internal-links a:hover {
+		color: rgb(var(--primary));
 	}
-
-	.brand-icon::before,
-	.brand-icon::after {
-		content: '';
-		position: absolute;
-		background: var(--primary-color);
-	}
-
-	.brand-icon::before {
-		width: 24px;
-		height: 1.2px;
-		left: 3px;
-		bottom: 7px;
-	}
-
-	.brand-icon::after {
-		width: 1.4px;
-		height: 42px;
-		left: 14px;
-		top: 8px;
-	}
-
-	.brand span {
-		font-size: 24px;
-		font-weight: 900;
-		text-transform: uppercase;
-	}
-
-	.nav-links {
-		display: flex;
-		gap: 2rem;
-	}
-
-	.nav-links a {
-		color: var(--text-color);
-		text-decoration: none;
-		font-size: 18px;
-		opacity: 0.5;
-		transition: opacity 0.3s ease;
-	}
-
-	.nav-links a:hover {
-		opacity: 1;
-	}
-
-	.nav-links a.active {
-		opacity: 1;
-		font-weight: 700;
-	}
-
-	@media (max-width: 768px) {
-		nav {
-			padding: 0 1rem;
-			height: 60px;
-		}
-
-		.nav-links {
-			display: flex;
-			gap: 1rem;
-		}
-
-		.nav-links a {
-			font-size: 16px;
-		}
-
-		.brand span {
-			font-size: 20px;
-		}
-
-		.brand-icon {
-			width: 20px;
-			height: 40px;
+	@media (max-width: 720px) {
+		.internal-links {
+			gap: 0.5em;
 		}
 	}
 </style>
