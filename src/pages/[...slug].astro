@@ -15,5 +15,21 @@ const { Content } = await entry.render();
 ---
 
 <PortfolioPost {...entry.data}>
-	<Content />
+	<style>
+		.post-content {
+			margin-top: 800px;  /* 상단 여백을 크게 증가 */
+			padding: 0 2rem;
+			max-width: 800px;
+			margin-inline: auto;
+		}
+		h1 {
+			font-size: 2.5em;
+			margin-bottom: 1em;
+			color: var(--text-color);
+		}
+	</style>
+	<div class="post-content">
+		<h1>{entry.data.title}</h1>
+		<Content />
+	</div>
 </PortfolioPost> 
