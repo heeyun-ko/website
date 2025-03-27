@@ -13,63 +13,89 @@ import { SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<article>
-				<div class="prose">
-					<div class="title">
-						<h1>CV</h1>
-						<a href="/HeeyunKo_CV.pdf" class="download-button" download>
-							Download PDF
-						</a>
+			<div class="hero">
+				<article>
+					<div class="prose">
+						<div class="title">
+							<h1>CV</h1>
+							<a href="/HeeyunKo_CV.pdf" class="download-button" download>
+								Download PDF
+							</a>
+						</div>
+						<h2>Education</h2>
+						<ul>
+							<li>중앙대학교 의과대학 (2020 - Present)</li>
+						</ul>
+						<h2>Research Experience</h2>
+						<ul>
+							<li>IBS Center for Neuroscience Imaging Research (2025 - Present)</li>
+							<li>중앙대학교 신경유전체학 연구실 (2024)</li>
+							<li>서울대학교 JW Lee 글로벌 의학센터 인턴십 (2023)</li>
+						</ul>
+						<h2>Projects</h2>
+						<ul>
+							<li>NeuroXi Community Founder</li>
+							<li>Aphrodot - GodJam Sleep Consulting Service</li>
+						</ul>
+						<h2>Awards</h2>
+						<ul>
+							<li>2023 디지털 헬스케어 해커톤 AI 센터장상</li>
+							<li>TEU MED 4th 혁신 콘테스트 참가</li>
+							<li>중앙대 LINC 3.0 스타트업 지원 프로그램 공식 벤처 클럽 인정</li>
+						</ul>
+						<h2>Contact</h2>
+						<ul>
+							<li>Email: eindel1217@gmail.com</li>
+							<li>LinkedIn: <a href="https://www.linkedin.com/in/heeyunko-42b517256/">linkedin.com/in/heeyunko-42b517256/</a></li>
+						</ul>
 					</div>
-					<h2>Education</h2>
-					<ul>
-						<li>중앙대학교 의과대학 (2020 - Present)</li>
-					</ul>
-					<h2>Research Experience</h2>
-					<ul>
-						<li>IBS Center for Neuroscience Imaging Research (2025 - Present)</li>
-						<li>중앙대학교 신경유전체학 연구실 (2024)</li>
-						<li>서울대학교 JW Lee 글로벌 의학센터 인턴십 (2023)</li>
-					</ul>
-					<h2>Projects</h2>
-					<ul>
-						<li>NeuroXi Community Founder</li>
-						<li>Aphrodot - GodJam Sleep Consulting Service</li>
-					</ul>
-					<h2>Awards</h2>
-					<ul>
-						<li>2023 디지털 헬스케어 해커톤 AI 센터장상</li>
-						<li>TEU MED 4th 혁신 콘테스트 참가</li>
-						<li>중앙대 LINC 3.0 스타트업 지원 프로그램 공식 벤처 클럽 인정</li>
-					</ul>
-					<h2>Contact</h2>
-					<ul>
-						<li>Email: eindel1217@gmail.com</li>
-						<li>LinkedIn: <a href="https://www.linkedin.com/in/heeyunko-42b517256/">linkedin.com/in/heeyunko-42b517256/</a></li>
-					</ul>
-				</div>
-			</article>
+				</article>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
+	.hero {
+		background-color: #ffd1dc;  /* 연한 핑크색 */
+		padding: 2rem 0;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
 	main {
 		width: 100%;
+		margin: 0 auto;
+		margin-top: 180px;
+	}
+	article {
 		max-width: 960px;
 		margin: 0 auto;
-		padding: 3rem 1rem;
-		margin-top: 160px;
+		padding: 0 1rem;
 	}
 	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
-		text-align: center;
-		line-height: 1;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 2rem;
 	}
 	.title h1 {
-		margin: 0 0 0.5em 0;
+		margin: 0;
+		font-size: 2.5rem;
+		color: rgb(var(--black));
+	}
+	.download-button {
+		display: inline-block;
+		padding: 0.5em 1em;
+		background-color: rgb(var(--primary));
+		color: white;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: background-color 0.2s;
+	}
+	.download-button:hover {
+		background-color: rgb(var(--primary-dark));
+		text-decoration: none;
 	}
 	.prose {
 		width: 720px;
@@ -94,19 +120,5 @@ import { SITE_TITLE } from '../consts';
 	}
 	.prose a:hover {
 		text-decoration: underline;
-	}
-	.download-button {
-		display: inline-block;
-		padding: 0.5em 1em;
-		margin-top: 1em;
-		background-color: rgb(var(--primary));
-		color: white;
-		text-decoration: none;
-		border-radius: 4px;
-		transition: background-color 0.2s;
-	}
-	.download-button:hover {
-		background-color: rgb(var(--primary-dark));
-		text-decoration: none;
 	}
 </style> 
