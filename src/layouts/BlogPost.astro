@@ -33,14 +33,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-width: 960px;
 				margin: 0 auto;
 				padding: 3rem 1rem;
+				margin-top: 160px;
 			}
 			.title {
 				font-size: 2.5em;
 				margin: 0.25em 0 0;
+				padding: 0 2rem;
 			}
 			.date {
 				margin-bottom: 2em;
 				color: rgb(var(--gray));
+				padding: 0 2rem;
 			}
 			.last-updated-on {
 				font-style: italic;
@@ -49,12 +52,17 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				width: 100%;
 				max-width: none;
 				margin: 0 auto;
+				padding: 0 2rem;
 			}
 			img {
 				width: 100%;
 				height: auto;
 				border-radius: 12px;
 				margin: 2em 0;
+			}
+			article {
+				max-width: 800px;
+				margin-inline: auto;
 			}
 		</style>
 	</head>
