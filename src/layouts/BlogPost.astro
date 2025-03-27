@@ -1,20 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 
-interface Props {
-	title: string;
-	description: string;
-	pubDate: Date;
-	updatedDate?: Date;
-	heroImage?: string;
-	meta_title?: string;
-	meta_description?: string;
-	keywords?: string[];
-	og_title?: string;
-	og_description?: string;
-	og_type?: string;
-	twitter_card?: string;
-}
+type Props = CollectionEntry<'posts'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
@@ -35,14 +22,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	.prose {
 		width: 100%;
-		max-width: none;
-		margin: 0 auto;
+		max-width: 800px;
+		margin: 2rem auto;
 	}
 
 	img {
 		width: 100%;
 		height: auto;
-		border-radius: 12px;
-		margin: 2em 0;
+		margin: 2rem 0;
 	}
 </style> 
