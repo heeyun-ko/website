@@ -46,29 +46,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<div class="card">
 						<img src="/images/workspace.jpg" alt="Workspace setup with multiple monitors" />
 						<div class="card-content">
-							<h3>Design<br/>Development</h3>
-							<p>Creating an efficient and comfortable workspace for productivity and creativity.</p>
+							<h3>Curious<br/>Eyes</h3>
+							<p>She has a lot of potential in art, science, creating. In order to realize this ability, she explores new opportunities.</p>
 						</div>
 					</div>
-					<div class="card alternate">
+					<div class="card">
 						<img src="/images/selfie.jpg" alt="Eindel's casual selfie" />
 						<div class="card-content">
-							<h3>Design<br/>Development</h3>
-							<p>Exploring self-expression through minimalist style and natural moments.</p>
+							<h3>Aesthetic<br/>Lover</h3>
+							<p>She loves all of the lovely creatures, objects, ideas. For her, Love means beautiful concept.</p>
 						</div>
 					</div>
 					<div class="card">
 						<img src="/images/mickey-white.jpg" alt="White Mickey Mouse shaped device" />
 						<div class="card-content">
-							<h3>Design<br/>Development</h3>
-							<p>Finding joy in simple and elegant design elements that bring a touch of magic to everyday life.</p>
+							<h3>Emotion<br/>Carer</h3>
+							<p>She emphasizes the power of Sympathy. Always trying to catch up the flow of ppl's emotions.</p>
 						</div>
 					</div>
-					<div class="card alternate">
+					<div class="card">
 						<img src="/images/winter-style.jpg" alt="Winter fashion mirror selfie" />
 						<div class="card-content">
-							<h3>Design<br/>Development</h3>
-							<p>Embracing personal style with cozy winter fashion and soft color palettes.</p>
+							<h3>Systemic<br/>Thinker</h3>
+							<p>She inherently likes to organize and optimize system. Her ambitions to achieve dreams is huge.</p>
 						</div>
 					</div>
 				</div>
@@ -86,6 +86,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		--nav-bg: #FFFCF0;
 		--white: #FFFFFF;
 		--dark: #1E1E1E;
+		--yellow: #FFD700;
+		--pink: #FFB6C1;
+		--light-green: #90EE90;
+		--dark-blue: #1E90FF;
 	}
 
 	body {
@@ -246,23 +250,41 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-size: 28px;
 		line-height: 1.2;
 		margin: 0 0 1rem 0;
-		color: var(--text-color);
 	}
 
 	.card-content p {
 		font-size: 18px;
 		line-height: 1.5;
-		color: var(--text-color);
 		margin: 0;
 	}
 
+	.card:nth-child(1) .card-content h3,
+	.card:nth-child(1) .card-content p {
+		color: var(--yellow);
+	}
+
+	.card:nth-child(2) .card-content h3,
+	.card:nth-child(2) .card-content p {
+		color: var(--pink);
+	}
+
+	.card:nth-child(3) .card-content h3,
+	.card:nth-child(3) .card-content p {
+		color: var(--light-green);
+	}
+
+	.card:nth-child(4) .card-content h3,
+	.card:nth-child(4) .card-content p {
+		color: var(--dark-blue);
+	}
+
 	.card.alternate .card-content {
-		background: var(--primary-color);
+		background: var(--white);
 	}
 
 	.card.alternate .card-content h3,
 	.card.alternate .card-content p {
-		color: var(--white);
+		color: var(--text-color);
 	}
 
 	@media (max-width: 768px) {
