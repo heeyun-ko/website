@@ -234,6 +234,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border-radius: 10px;
 		overflow: hidden;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.card:hover {
+		transform: translateY(-10px) scale(1.02);
+		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 	}
 
 	.card img {
@@ -242,11 +249,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		object-fit: cover;
 		display: block;
 		margin: 0;
+		transition: transform 0.3s ease;
+	}
+
+	.card:hover img {
+		transform: scale(1.05);
 	}
 
 	.card-content {
 		padding: 2.5rem;
 		background: var(--white);
+		transition: transform 0.3s ease;
+	}
+
+	.card:hover .card-content h3 {
+		transform: translateY(-2px);
 	}
 
 	.card-content h3 {
