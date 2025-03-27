@@ -1,6 +1,5 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-import { getUrl } from '../utils/url';
 
 interface Props {
     title: string;
@@ -13,7 +12,7 @@ const { title, description, date, slug } = Astro.props;
 ---
 
 <article class="blog-card">
-    <a href={`/posts/${slug}`} class="card-link">
+    <a href={slug} class="card-link">
         <div class="card-content">
             <div class="main-content">
                 <h2 class="title">{title}</h2>

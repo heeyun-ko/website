@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import PortfolioPost from '../layouts/PortfolioPost.astro';
+import BlogPost from '../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-	const portfolioEntries = await getCollection('portfolio');
-	return portfolioEntries.map(entry => ({
+	const blogEntries = await getCollection('posts');
+	return blogEntries.map(entry => ({
 		params: { slug: entry.slug },
 		props: { entry },
 	}));
@@ -14,22 +14,17 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<PortfolioPost {...entry.data}>
-	<style>
-		.post-content {
-			margin-top: 800px;  /* 상단 여백을 크게 증가 */
-			padding: 0 2rem;
-			max-width: 800px;
-			margin-inline: auto;
-		}
-		h1 {
-			font-size: 2.5em;
-			margin-bottom: 1em;
-			color: var(--text-color);
-		}
-	</style>
+<BlogPost {...entry.data}>
 	<div class="post-content">
-		<h1>{entry.data.title}</h1>
 		<Content />
 	</div>
-</PortfolioPost> 
+</BlogPost>
+
+<style>
+	.post-content {
+		margin-top: 160px;
+		padding: 0 2rem;
+		max-width: 800px;
+		margin-inline: auto;
+	}
+</style> 
