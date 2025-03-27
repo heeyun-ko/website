@@ -4,16 +4,19 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE } from '../../consts';
 import { getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts');
-	return posts.map(post => ({
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
 		params: { slug: post.slug },
-		props: { post },
+		props: post,
 	}));
 }
 
-const { post } = Astro.props;
+type Props = CollectionEntry<'blog'>;
+
+const post = Astro.props;
 const { Content } = await post.render();
 ---
 
@@ -28,22 +31,22 @@ const { Content } = await post.render();
 	<body>
 		<Header />
 		<main>
-			<article class="post">
-				<header class="post-header">
-					<h1>{post.data.title}</h1>
-					<time datetime={post.data.date.toISOString()}>
-						{post.data.date.toLocaleDateString('ko-KR', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric',
-						})}
-					</time>
-				</header>
-
+			<BlogPost {...post.data}>
+				<style>
+					.post-content {
+						margin-top: 400px;  /* 포스트 제목과 내용의 상단 여백 증가 */
+						padding: 0 2rem;
+					}
+					h1 {
+						font-size: 2.5em;
+						margin-bottom: 1em;
+					}
+				</style>
 				<div class="post-content">
+					<h1>{post.data.title}</h1>
 					<Content />
 				</div>
-			</article>
+			</BlogPost>
 		</main>
 		<Footer />
 	</body>
