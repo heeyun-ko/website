@@ -3,7 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE } from '../../consts';
-import { getCollection } from 'astro:content';
+import { getCollection, CollectionEntry } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
@@ -34,7 +34,7 @@ const { Content } = await post.render();
 			<BlogPost {...post.data}>
 				<style>
 					.post-content {
-						margin-top: 400px;  /* 포스트 제목과 내용의 상단 여백 증가 */
+						margin-top: 800px;  /* 상단 여백을 800px로 크게 증가 */
 						padding: 0 2rem;
 					}
 					h1 {
