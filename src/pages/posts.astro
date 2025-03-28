@@ -84,6 +84,14 @@ const twitterCard = 'summary_large_image';
 		display: flex;
 		flex-direction: column;
 	}
+	/* 짝수 번째 카드 */
+	li:nth-child(even) .post-card {
+		background-color: #FFE4E1;  /* 미스티 로즈 */
+	}
+	/* 홀수 번째 카드 */
+	li:nth-child(odd) .post-card {
+		background-color: #E6E6FA;  /* 라벤더 */
+	}
 	.post-card:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
