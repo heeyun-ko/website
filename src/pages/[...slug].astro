@@ -1,17 +1,4 @@
 ---
-<<<<<<< Updated upstream
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
-import BlogPost from '../layouts/BlogPost.astro';
-
-export async function getStaticPaths() {
-	const posts = await getCollection('posts');
-	return posts.map(post => ({
-=======
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -22,7 +9,6 @@ import FormattedDate from '../components/FormattedDate.astro';
 export async function getStaticPaths() {
 	const posts = await getCollection('posts');
 	return posts.map((post) => ({
->>>>>>> Stashed changes
 		params: { slug: post.slug },
 		props: { post },
 	}));
@@ -30,8 +16,6 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
-<<<<<<< Updated upstream
-=======
 
 // SEO metadata
 const pageTitle = `${post.data.title} - ${SITE_TITLE}`;
@@ -39,36 +23,23 @@ const pageDescription = post.data.description;
 const keywords = post.data.keywords || [];
 const ogType = 'article';
 const twitterCard = 'summary_large_image';
->>>>>>> Stashed changes
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead 
-<<<<<<< Updated upstream
-			title={`${post.data.title} - ${SITE_TITLE}`}
-			description={post.data.description}
-=======
 			title={pageTitle} 
 			description={pageDescription} 
 			keywords={keywords}
 			ogType={ogType}
 			twitterCard={twitterCard}
->>>>>>> Stashed changes
 		/>
 	</head>
 	<body>
 		<Header />
 		<div class="page-container">
 			<main>
-<<<<<<< Updated upstream
-				<BlogPost {...post.data}>
-					<div class="post-content">
-						<Content />
-					</div>
-				</BlogPost>
-=======
 				<article>
 					<header>
 						<h1>{post.data.title}</h1>
@@ -78,12 +49,10 @@ const twitterCard = 'summary_large_image';
 					</header>
 					<Content />
 				</article>
->>>>>>> Stashed changes
 			</main>
 			<Footer />
 		</div>
 	</body>
-<<<<<<< Updated upstream
 </html>
 
 <style>
@@ -149,7 +118,4 @@ const twitterCard = 'summary_large_image';
 			padding: 1.5rem 1rem;
 		}
 	}
-</style> 
-=======
-</html> 
->>>>>>> Stashed changes
+</style>
