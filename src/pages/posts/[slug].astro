@@ -1,27 +1,8 @@
 ---
-<<<<<<< Updated upstream
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
-=======
->>>>>>> Stashed changes
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE } from '../../consts';
-<<<<<<< Updated upstream
-import BlogPost from '../../layouts/BlogPost.astro';
-
-export async function getStaticPaths() {
-	const blogEntries = await getCollection('posts');
-	return blogEntries.map(entry => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
-}
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-=======
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -42,36 +23,35 @@ const pageDescription = post.data.description;
 const keywords = post.data.keywords || [];
 const ogType = 'article';
 const twitterCard = 'summary_large_image';
->>>>>>> Stashed changes
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead 
-<<<<<<< Updated upstream
-			title={`${entry.data.title} - ${SITE_TITLE}`}
-			description={entry.data.description}
-=======
 			title={pageTitle} 
 			description={pageDescription} 
 			keywords={keywords}
 			ogType={ogType}
 			twitterCard={twitterCard}
->>>>>>> Stashed changes
 		/>
 	</head>
 	<body>
 		<Header />
-<<<<<<< Updated upstream
-		<main>
-			<BlogPost {...entry.data}>
-				<div class="post-content">
+		<div class="page-container">
+			<main>
+				<article>
+					<header>
+						<h1>{post.data.title}</h1>
+						<p class="date">
+							<FormattedDate date={post.data.pubDate} />
+						</p>
+					</header>
 					<Content />
-				</div>
-			</BlogPost>
-		</main>
-		<Footer />
+				</article>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
 
@@ -155,21 +135,3 @@ const twitterCard = 'summary_large_image';
 		}
 	}
 </style> 
-=======
-		<div class="page-container">
-			<main>
-				<article>
-					<header>
-						<h1>{post.data.title}</h1>
-						<p class="date">
-							<FormattedDate date={post.data.pubDate} />
-						</p>
-					</header>
-					<Content />
-				</article>
-			</main>
-			<Footer />
-		</div>
-	</body>
-</html> 
->>>>>>> Stashed changes
