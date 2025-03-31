@@ -25,47 +25,56 @@ const twitterCard = 'summary_large_image';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/posts/${post.slug}/`}>
-									<div class="post-card">
-										{post.data.heroImage && (
-											<img 
-												src={post.data.heroImage} 
-												alt="" 
-												class="post-image"
-											/>
-										)}
-										<div class="post-content">
-											<h4 class="post-title">{post.data.title}</h4>
-											<p class="post-date">
-												<FormattedDate date={post.data.pubDate} />
-											</p>
-											<p class="post-description">{post.data.description}</p>
+		<div class="page-container">
+			<main>
+				<section>
+					<ul>
+						{
+							posts.map((post) => (
+								<li>
+									<a href={`/posts/${post.slug}/`}>
+										<div class="post-card">
+											{post.data.heroImage && (
+												<img 
+													src={post.data.heroImage} 
+													alt="" 
+													class="post-image"
+												/>
+											)}
+											<div class="post-content">
+												<h4 class="post-title">{post.data.title}</h4>
+												<p class="post-date">
+													<FormattedDate date={post.data.pubDate} />
+												</p>
+												<p class="post-description">{post.data.description}</p>
+											</div>
 										</div>
-									</div>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</section>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
 
 <style>
+	.page-container {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
 	main {
 		width: 100%;
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 3rem 1rem;
 		margin-top: 180px;
+		flex: 1;
 	}
 	ul {
 		display: grid;
