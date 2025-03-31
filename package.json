@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+<<<<<<< HEAD
+    "deploy": "astro build && gh-pages -d dist --git --depth=1"
+=======
     "deploy": "astro build && gh-pages -d dist"
+>>>>>>> c1bb76f160f8814e32629a0a56fa92bf9016e0ae
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
