@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && gh-pages -d dist"
+    "astro": "astro",
+    "deploy": "astro build"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
@@ -24,7 +26,6 @@
     "node": ">=18.17.1"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
     "wrangler": "^3.96.0"
   }
 }
