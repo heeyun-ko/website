@@ -29,26 +29,34 @@ const { Content } = await post.render();
 	</head>
 	<body>
 		<Header />
-		<main>
-			<BlogPost {...post.data}>
-				<div class="post-content">
-					<Content />
-				</div>
-			</BlogPost>
-		</main>
-		<Footer />
+		<div class="page-container">
+			<main>
+				<BlogPost {...post.data}>
+					<div class="post-content">
+						<Content />
+					</div>
+				</BlogPost>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
 
 <style>
+	.page-container {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
 	main {
 		width: 100%;
 		max-width: 960px;
 		margin: 0 auto;
 		padding: 3rem 1rem;
 		margin-top: 180px;
+		flex: 1;
 	}
-
 	article {
 		width: 100%;
 		max-width: 720px;
