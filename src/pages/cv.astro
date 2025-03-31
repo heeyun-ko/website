@@ -12,51 +12,59 @@ import { SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<div class="hero">
-				<article>
-					<div class="prose">
-						<div class="title">
-							<h1>CV</h1>
-							<a href="/HeeyunKo_CV.pdf" class="download-button" download>
-								Download PDF
-							</a>
+		<div class="page-container">
+			<main>
+				<div class="hero">
+					<article>
+						<div class="prose">
+							<div class="title">
+								<h1>CV</h1>
+								<a href="/HeeyunKo_CV.pdf" class="download-button" download>
+									Download PDF
+								</a>
+							</div>
+							<h2>Education</h2>
+							<ul>
+								<li>중앙대학교 의과대학 (2020 - Present)</li>
+							</ul>
+							<h2>Research Experience</h2>
+							<ul>
+								<li>IBS Center for Neuroscience Imaging Research (2025 - Present)</li>
+								<li>중앙대학교 신경유전체학 연구실 (2024)</li>
+								<li>서울대학교 JW Lee 글로벌 의학센터 인턴십 (2023)</li>
+							</ul>
+							<h2>Projects</h2>
+							<ul>
+								<li>NeuroXi Community Founder</li>
+								<li>Aphrodot - GodJam Sleep Consulting Service</li>
+							</ul>
+							<h2>Awards</h2>
+							<ul>
+								<li>2023 디지털 헬스케어 해커톤 AI 센터장상</li>
+								<li>TEU MED 4th 혁신 콘테스트 참가</li>
+								<li>중앙대 LINC 3.0 스타트업 지원 프로그램 공식 벤처 클럽 인정</li>
+							</ul>
+							<h2>Contact</h2>
+							<ul>
+								<li>Email: eindel1217@gmail.com</li>
+								<li>LinkedIn: <a href="https://www.linkedin.com/in/heeyunko-42b517256/">linkedin.com/in/heeyunko-42b517256/</a></li>
+							</ul>
 						</div>
-						<h2>Education</h2>
-						<ul>
-							<li>중앙대학교 의과대학 (2020 - Present)</li>
-						</ul>
-						<h2>Research Experience</h2>
-						<ul>
-							<li>IBS Center for Neuroscience Imaging Research (2025 - Present)</li>
-							<li>중앙대학교 신경유전체학 연구실 (2024)</li>
-							<li>서울대학교 JW Lee 글로벌 의학센터 인턴십 (2023)</li>
-						</ul>
-						<h2>Projects</h2>
-						<ul>
-							<li>NeuroXi Community Founder</li>
-							<li>Aphrodot - GodJam Sleep Consulting Service</li>
-						</ul>
-						<h2>Awards</h2>
-						<ul>
-							<li>2023 디지털 헬스케어 해커톤 AI 센터장상</li>
-							<li>TEU MED 4th 혁신 콘테스트 참가</li>
-							<li>중앙대 LINC 3.0 스타트업 지원 프로그램 공식 벤처 클럽 인정</li>
-						</ul>
-						<h2>Contact</h2>
-						<ul>
-							<li>Email: eindel1217@gmail.com</li>
-							<li>LinkedIn: <a href="https://www.linkedin.com/in/heeyunko-42b517256/">linkedin.com/in/heeyunko-42b517256/</a></li>
-						</ul>
-					</div>
-				</article>
-			</div>
-		</main>
-		<Footer />
+					</article>
+				</div>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
 
 <style>
+	.page-container {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
 	.hero {
 		background-color: #ffd1dc;
 		padding: 2rem 0;
@@ -74,6 +82,7 @@ import { SITE_TITLE } from '../consts';
 		margin-top: 180px;
 		margin-bottom: 100px;
 		position: relative;
+		flex: 1;
 	}
 	article {
 		max-width: 960px;
