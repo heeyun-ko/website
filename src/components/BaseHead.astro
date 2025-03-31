@@ -5,16 +5,6 @@ import '../styles/global.css';
 import { getUrl } from '../utils/url';
 import Fonts from './Fonts.astro';
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-59HV2ZE0S2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-
-
 interface Props {
 	title: string;
 	description: string;
@@ -49,7 +39,7 @@ const {
 	og_title,
 	og_description,
 	og_image,
-	og_type = 'article',
+	og_type = 'website',
 	twitter_title,
 	twitter_description,
 	twitter_image,
@@ -87,6 +77,15 @@ const absoluteOgImage = getAbsoluteImageUrl(finalOgImage);
 const absoluteTwitterImage = getAbsoluteImageUrl(finalTwitterImage);
 ---
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59HV2ZE0S2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -103,7 +102,7 @@ const absoluteTwitterImage = getAbsoluteImageUrl(finalTwitterImage);
 <title>{finalMetaTitle}</title>
 <meta name="title" content={finalMetaTitle} />
 <meta name="description" content={finalMetaDescription} />
-{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+{keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
 {author && <meta name="author" content={author} />}
 
 <!-- Robots Meta Tags -->
