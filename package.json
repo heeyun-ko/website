@@ -8,7 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "sync": "node scripts/sync-obsidian.js",
-    "deploy": "node scripts/sync-obsidian.js && astro build && npx wrangler pages deploy ./dist"
+    "deploy": "astro build && gh-pages -d dist"
+}
+
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
