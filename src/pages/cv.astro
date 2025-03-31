@@ -105,7 +105,7 @@ import { SITE_TITLE } from '../consts';
 	}
 	.prose {
 		width: 720px;
-		max-width: calc(100% - 2em);
+		max-width: 100%;
 		margin: auto;
 		padding: 2em;
 		color: rgb(var(--gray-dark));
@@ -133,11 +133,12 @@ import { SITE_TITLE } from '../consts';
 	}
 	.prose ul {
 		margin: 1rem 0;
-		padding-left: 1.5rem;
+		padding-left: 1rem;
 	}
 	.prose li {
 		margin: 0.5rem 0;
 		line-height: 1.5;
+		font-size: 1rem;
 	}
 	.prose a {
 		color: rgb(var(--primary));
@@ -151,12 +152,19 @@ import { SITE_TITLE } from '../consts';
 	@media (max-width: 720px) {
 		.prose {
 			padding: 1.5rem;
+			width: 100%;
 		}
 		.prose h2 {
 			font-size: 1.5rem;
 		}
 		.prose h3 {
 			font-size: 1.2rem;
+		}
+		.prose ul {
+			padding-left: 1rem;
+		}
+		.prose li {
+			font-size: 1rem;
 		}
 	}
 </style> 
