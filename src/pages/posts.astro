@@ -21,7 +21,13 @@ const twitterCard = 'summary_large_image';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead 
+			title={pageTitle} 
+			description={pageDescription} 
+			keywords={keywords}
+			ogType={ogType}
+			twitterCard={twitterCard}
+		/>
 	</head>
 	<body>
 		<Header />
@@ -59,7 +65,6 @@ const twitterCard = 'summary_large_image';
 			<Footer />
 		</div>
 	</body>
-<<<<<<< Updated upstream
 </html>
 
 <style>
@@ -135,7 +140,4 @@ const twitterCard = 'summary_large_image';
 			grid-template-columns: 1fr;
 		}
 	}
-</style> 
-=======
-</html> 
->>>>>>> Stashed changes
+</style>
