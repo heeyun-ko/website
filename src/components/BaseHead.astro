@@ -5,6 +5,16 @@ import '../styles/global.css';
 import { getUrl } from '../utils/url';
 import Fonts from './Fonts.astro';
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-59HV2ZE0S2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
 interface Props {
 	title: string;
 	description: string;
